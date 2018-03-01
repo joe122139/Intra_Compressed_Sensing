@@ -1,0 +1,56 @@
+N=16;
+n=N*N;
+r_orth = orth(randn(n, n))';
+ran = orth(randn(n, n))';
+haar = haargen(n)';
+
+dct_ = dctmtx(n);
+dct_a = dct2(eye(n));
+dct_b = idct2(eye(n));
+dct_T = dctmtx(n)';
+c=dct_a*dct_b;
+ coherence(c,n)
+ m_coherence(dct_b,haar,n)
+ 
+load('../stru_16_z.mat');
+qc_ldpc_str = Phi_;
+
+load('../python/m.txt');
+apr_dct_16 = m;
+
+load('../30PerBin01_16_0.0430500z.mat');
+bin_16_ran=Phi_;
+
+
+%%
+
+n_test = 5;
+h=[];
+m_coh=[];
+co=[];
+n_transform = 2;
+for j = 1:n_transform
+    switch j
+        case 1
+            h = haar;
+        case 2
+            h = dct_a;
+    end
+        
+    for i = 1:n_test
+        switch i  
+            case 1
+                M = r_orth;
+            case 2
+                M = qc_ldpc_str;
+            case 3
+                M = apr_dct_16;
+            case 4
+                M = bin_16_ran;
+            case 5
+                M = ran;
+        end
+        m_coh(i,j) = m_coherence(M,h,n);        
+        co(i,j) = coherence(M*h,n);
+    end
+end
