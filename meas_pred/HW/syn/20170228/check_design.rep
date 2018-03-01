@@ -1,0 +1,27 @@
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+ 
+****************************************
+check_design summary:
+Version:     I-2013.12-SP2
+Date:        Tue Feb 28 22:19:27 2017
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                               8
+    Cells do not drive (LINT-1)                                     8
+--------------------------------------------------------------------------------
+
+Warning: In design 'SAD', cell 'B_8' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_9' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_10' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_11' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_12' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_13' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_14' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', cell 'B_15' does not drive any nets. (LINT-1)
+Warning: In design 'SAD', output port 'sad[16]' is connected directly to 'logic 0'. (LINT-52)
+1

@@ -1,0 +1,314 @@
+# //  ModelSim SE 10.2c Jul 18 2013 Linux 2.6.32-573.7.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile predDCT.mpf 
+# Loading project predDCT
+do compile.do
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module bfifo_boundary
+# -- Compiling module stdcore_2prf
+# -- Compiling module stdcore_asyncfifo
+# -- Compiling module stdcore_b2prf
+# -- Compiling module stdcore_bbfifo
+# -- Compiling module stdcore_bfifo
+# -- Compiling module stdcore_rfifo
+# -- Compiling module stdcore_rfifo_p1c2ck
+# -- Compiling module stdcore_rfifo_pre
+# -- Compiling module stdcore_spram
+# -- Compiling module stdcore_ubfifo
+# 
+# Top level modules:
+# 	stdcore_asyncfifo
+# 	stdcore_bbfifo
+# 	stdcore_rfifo_p1c2ck
+# 	stdcore_spram
+# 	stdcore_ubfifo
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module FSM
+# -- Compiling module SAD
+# ** Warning: ../rtl/SAD.sv(27): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(29): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(32): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(36): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(39): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# -- Compiling module meas_pred
+# ** Warning: ../rtl/meas_pred.sv(147): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(148): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(149): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(153): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(155): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(156): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(159): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(160): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(161): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(164): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(165): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(166): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(169): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(170): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(171): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(174): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(175): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(176): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(180): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(184): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(188): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(190): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(195): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(197): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(202): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(205): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(208): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(212): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# Top level modules:
+# 	meas_pred
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling package test_measPred_sv_unit
+# -- Compiling program tb_measPred
+# -- Compiling module test_measPred
+# 
+# Top level modules:
+# 	test_measPred
+vsim -voptargs=+acc work.test_measPred
+# vsim -voptargs=+acc work.test_measPred 
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+# ** Warning: (vsim-3015) ../rtl/meas_pred.sv(254): [PCDPC] - Port size (9 or 9) does not match connection size (8) for port 'wdata'. The port definition is at: ../stdcore/rtl/stdcore_2prf.v(24).
+#         Region: /test_measPred/meas_pred/sram
+# ** Warning: (vsim-3015) ../rtl/meas_pred.sv(254): [PCDPC] - Port size (9 or 9) does not match connection size (8) for port 'rdata'. The port definition is at: ../stdcore/rtl/stdcore_2prf.v(29).
+#         Region: /test_measPred/meas_pred/sram
+do compile.do
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module bfifo_boundary
+# -- Compiling module stdcore_2prf
+# -- Compiling module stdcore_asyncfifo
+# -- Compiling module stdcore_b2prf
+# -- Compiling module stdcore_bbfifo
+# -- Compiling module stdcore_bfifo
+# -- Compiling module stdcore_rfifo
+# -- Compiling module stdcore_rfifo_p1c2ck
+# -- Compiling module stdcore_rfifo_pre
+# -- Compiling module stdcore_spram
+# -- Compiling module stdcore_ubfifo
+# 
+# Top level modules:
+# 	stdcore_asyncfifo
+# 	stdcore_bbfifo
+# 	stdcore_rfifo_p1c2ck
+# 	stdcore_spram
+# 	stdcore_ubfifo
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module FSM
+# -- Compiling module SAD
+# ** Warning: ../rtl/SAD.sv(27): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(29): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(32): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(36): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(39): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# -- Compiling module meas_pred
+# ** Warning: ../rtl/meas_pred.sv(147): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(148): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(149): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(153): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(155): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(156): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(159): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(160): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(161): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(164): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(165): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(166): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(169): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(170): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(171): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(174): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(175): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(176): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(180): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(184): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(188): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(190): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(195): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(197): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(202): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(205): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(208): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(212): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# Top level modules:
+# 	meas_pred
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling package test_measPred_sv_unit
+# -- Compiling program tb_measPred
+# -- Compiling module test_measPred
+# 
+# Top level modules:
+# 	test_measPred
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+do wave.do
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_bot'.
+# Executing ONERROR command at macro ./wave.do line 42
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_le'.
+# Executing ONERROR command at macro ./wave.do line 98
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_bot'.
+# Executing ONERROR command at macro ./wave.do line 99
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_ave_top'.
+# Executing ONERROR command at macro ./wave.do line 100
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_ave_top'.
+# Executing ONERROR command at macro ./wave.do line 179
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_bot'.
+# Executing ONERROR command at macro ./wave.do line 180
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_le'.
+# Executing ONERROR command at macro ./wave.do line 181
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_le'.
+# Executing ONERROR command at macro ./wave.do line 193
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_buf_bot'.
+# Executing ONERROR command at macro ./wave.do line 194
+# ** Error: (vish-4014) No objects found matching '/test_measPred/meas_pred/y_ave_top'.
+# Executing ONERROR command at macro ./wave.do line 195
+run 100ns
+# INFO: stdcore_2prf_8x64 created as test_measPred.meas_pred.sram
+    8 !=     4 in file X: 1 Y: 0    8 !=     4 in file X: 1 Y: 0   23 !=    11 in file X: 1 Y: 0   29 !=    15 in file X: 1 Y: 0   23 !=    11 in file X: 1 Y: 0   24 !=    11 in file X: 1 Y: 0   14 !=     7 in file X: 1 Y: 0   22 !=    10 in file X: 1 Y: 0   20 !=     9 in file X: 1 Y: 0   23 !=    10 in file X: 1 Y: 0   20 !=     8 in file X: 1 Y: 0   26 !=    13 in file X: 1 Y: 0    6 !=     2 in file X: 3 Y: 0    2 !=    -2 in file X: 3 Y: 0   25 !=    13 in file X: 3 Y: 0   27 !=    13 in file X: 3 Y: 0   26 !=    14 in file X: 3 Y: 0   28 !=    15 in file X: 3 Y: 0   13 !=     6 in file X: 3 Y: 0   21 !=     9 in file X: 3 Y: 0   22 !=    11 in file X: 3 Y: 0   28 !=    15 in file X: 3 Y: 0   25 !=    13 in file X: 3 Y: 0   26 !=    13 in file X: 3 Y: 0   15 !=    11 in file X: 4 Y: 0    8 !=     4 in file X: 4 Y: 0   53 !=    41 in file X: 4 Y: 0   54 !=    40 in file X: 4 Y: 0   55 !=    43 in file X: 4 Y: 0   58 !=    45 in file X: 4 Y: 0   30 !=    23 in file X: 4 Y: 0   43 !=    31 in file X: 4 Y: 0   41 !=    30 in file X: 4 Y: 0   57 !=    44 in file X: 4 Y: 0   54 !=    42 in file X: 4 Y: 0   55 !=    42 in file X: 4 Y: 0add wave -position insertpoint  \
+sim:/test_measPred/meas_pred/x_ave_top \
+sim:/test_measPred/meas_pred/x_buf_bot \
+sim:/test_measPred/meas_pred/x_buf_le
+restart -f
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+run 100ns
+# INFO: stdcore_2prf_8x64 created as test_measPred.meas_pred.sram
+    8 !=     4 in file X: 1 Y: 0    8 !=     4 in file X: 1 Y: 0   23 !=    11 in file X: 1 Y: 0   29 !=    15 in file X: 1 Y: 0   23 !=    11 in file X: 1 Y: 0   24 !=    11 in file X: 1 Y: 0   14 !=     7 in file X: 1 Y: 0   22 !=    10 in file X: 1 Y: 0   20 !=     9 in file X: 1 Y: 0   23 !=    10 in file X: 1 Y: 0   20 !=     8 in file X: 1 Y: 0   26 !=    13 in file X: 1 Y: 0    6 !=     2 in file X: 3 Y: 0    2 !=    -2 in file X: 3 Y: 0   25 !=    13 in file X: 3 Y: 0   27 !=    13 in file X: 3 Y: 0   26 !=    14 in file X: 3 Y: 0   28 !=    15 in file X: 3 Y: 0   13 !=     6 in file X: 3 Y: 0   21 !=     9 in file X: 3 Y: 0   22 !=    11 in file X: 3 Y: 0   28 !=    15 in file X: 3 Y: 0   25 !=    13 in file X: 3 Y: 0   26 !=    13 in file X: 3 Y: 0   15 !=    11 in file X: 4 Y: 0    8 !=     4 in file X: 4 Y: 0   53 !=    41 in file X: 4 Y: 0   54 !=    40 in file X: 4 Y: 0   55 !=    43 in file X: 4 Y: 0   58 !=    45 in file X: 4 Y: 0   30 !=    23 in file X: 4 Y: 0   43 !=    31 in file X: 4 Y: 0   41 !=    30 in file X: 4 Y: 0   57 !=    44 in file X: 4 Y: 0   54 !=    42 in file X: 4 Y: 0   55 !=    42 in file X: 4 Y: 0write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/jianbin/measPred/HW/sim/wave.do
+restart -f
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+run 100ns
+# INFO: stdcore_2prf_8x64 created as test_measPred.meas_pred.sram
+run 1us
+   14 !=    10 in file X:13 Y: 1    4 !=     0 in file X:13 Y: 1    1 !=   -11 in file X:13 Y: 1    3 !=   -11 in file X:13 Y: 1    6 !=    -6 in file X:13 Y: 1    5 !=    -8 in file X:13 Y: 1    4 !=    -3 in file X:13 Y: 1    7 !=    -5 in file X:13 Y: 1   17 !=     6 in file X:13 Y: 1    3 !=   -10 in file X:13 Y: 1   -1 !=   -13 in file X:13 Y: 1   12 !=    -1 in file X:13 Y: 1##  1 !=  0 in file  X:13 Y: 1    0 !=     8 in file X:20 Y: 1    3 !=    11 in file X:20 Y: 1  -17 !=     7 in file X:20 Y: 1  -14 !=    14 in file X:20 Y: 1   -7 !=    17 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1   -6 !=     8 in file X:20 Y: 1  -13 !=    11 in file X:20 Y: 1   -9 !=    13 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1  -11 !=    13 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1##  1 !=  0 in file  X:20 Y: 1do compile.do
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module bfifo_boundary
+# -- Compiling module stdcore_2prf
+# -- Compiling module stdcore_asyncfifo
+# -- Compiling module stdcore_b2prf
+# -- Compiling module stdcore_bbfifo
+# -- Compiling module stdcore_bfifo
+# -- Compiling module stdcore_rfifo
+# -- Compiling module stdcore_rfifo_p1c2ck
+# -- Compiling module stdcore_rfifo_pre
+# -- Compiling module stdcore_spram
+# -- Compiling module stdcore_ubfifo
+# 
+# Top level modules:
+# 	stdcore_asyncfifo
+# 	stdcore_bbfifo
+# 	stdcore_rfifo_p1c2ck
+# 	stdcore_spram
+# 	stdcore_ubfifo
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling module FSM
+# -- Compiling module SAD
+# ** Warning: ../rtl/SAD.sv(27): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(29): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(32): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(36): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/SAD.sv(39): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# -- Compiling module meas_pred
+# ** Warning: ../rtl/meas_pred.sv(147): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(148): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(149): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(153): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(155): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(156): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(159): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(160): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(161): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(164): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(165): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(166): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(169): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(170): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(171): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(174): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(175): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(176): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(180): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(184): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(188): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(190): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(195): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(197): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(202): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(205): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(208): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: ../rtl/meas_pred.sv(212): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# Top level modules:
+# 	meas_pred
+# Model Technology ModelSim SE vlog 10.2c Compiler 2013.07 Jul 18 2013
+# -- Compiling package test_measPred_sv_unit
+# -- Compiling program tb_measPred
+# -- Compiling module test_measPred
+# 
+# Top level modules:
+# 	test_measPred
+restart -f
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+run 1us
+# INFO: stdcore_2prf_8x64 created as test_measPred.meas_pred.sram
+   14 !=    10 in file X:13 Y: 1    4 !=     0 in file X:13 Y: 1    1 !=   -11 in file X:13 Y: 1    3 !=   -11 in file X:13 Y: 1    6 !=    -6 in file X:13 Y: 1    5 !=    -8 in file X:13 Y: 1    4 !=    -3 in file X:13 Y: 1    7 !=    -5 in file X:13 Y: 1   17 !=     6 in file X:13 Y: 1    3 !=   -10 in file X:13 Y: 1   -1 !=   -13 in file X:13 Y: 1   12 !=    -1 in file X:13 Y: 1##  1 !=  0 in file  X:13 Y: 1    0 !=     8 in file X:20 Y: 1    3 !=    11 in file X:20 Y: 1  -17 !=     7 in file X:20 Y: 1  -14 !=    14 in file X:20 Y: 1   -7 !=    17 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1   -6 !=     8 in file X:20 Y: 1  -13 !=    11 in file X:20 Y: 1   -9 !=    13 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1  -11 !=    13 in file X:20 Y: 1  -16 !=    10 in file X:20 Y: 1##  1 !=  0 in file  X:20 Y: 1run 1us
+    5 !=     1 in file X:43 Y: 1   -3 !=    -7 in file X:43 Y: 1    7 !=    -5 in file X:43 Y: 1    3 !=   -11 in file X:43 Y: 1    9 !=    -3 in file X:43 Y: 1    5 !=    -8 in file X:43 Y: 1   -1 !=    -8 in file X:43 Y: 1   10 !=    -2 in file X:43 Y: 1   13 !=     2 in file X:43 Y: 1    4 !=    -9 in file X:43 Y: 1    8 !=    -4 in file X:43 Y: 1    4 !=    -9 in file X:43 Y: 1##  1 !=  0 in file  X:43 Y: 1  -15 !=     1 in file X:15 Y: 2    6 !=    22 in file X:15 Y: 2  -21 !=    27 in file X:15 Y: 2  -27 !=    29 in file X:15 Y: 2  -30 !=    18 in file X:15 Y: 2  -33 !=    19 in file X:15 Y: 2  -15 !=    13 in file X:15 Y: 2  -14 !=    34 in file X:15 Y: 2  -29 !=    15 in file X:15 Y: 2  -24 !=    28 in file X:15 Y: 2  -20 !=    28 in file X:15 Y: 2  -31 !=    21 in file X:15 Y: 2##  1 !=  0 in file  X:15 Y: 2restart -f
+# Loading sv_std.std
+# Loading work.test_measPred_sv_unit(fast)
+# Loading work.test_measPred(fast)
+# Loading work.tb_measPred(fast)
+# Loading work.meas_pred(fast)
+# Loading work.FSM(fast)
+# Loading work.SAD(fast)
+# Loading work.stdcore_2prf(fast)
+run 500ns
+# INFO: stdcore_2prf_8x64 created as test_measPred.meas_pred.sram
+run 100ns
+run 100ns
+run 100ns
+run 100ns

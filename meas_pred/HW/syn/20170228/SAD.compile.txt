@@ -1,0 +1,171 @@
+Alib files are up-to-date.
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 9 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'SAD'
+ Implement Synthetic for 'SAD'.
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'SAD'. (DDB-72)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04    1813.4      0.00       0.0       0.0                          
+    0:00:04    1813.4      0.00       0.0       0.0                          
+    0:00:04    1813.4      0.00       0.0       0.0                          
+    0:00:04    1813.4      0.00       0.0       0.0                          
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:05    1595.4      0.00       0.0       0.0                          
+    0:00:06    1940.1      0.00       0.0       0.0                          
+    0:00:06    1940.1      0.00       0.0       0.0                          
+Loaded alib file './alib-52/sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c.db.alib'
+    0:00:08    1940.1      0.00       0.0       0.0                          
+    0:00:08    1940.1      0.00       0.0       0.0                          
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08    1940.7      0.00       0.0       0.0                          
+    0:00:08    1940.7      0.00       0.0       0.0                          
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08    1940.1      0.00       0.0       0.0                          
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+    0:00:10    1597.9      0.00       0.0       0.0                          
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+Loading db file '/eda/smic.40ll/arm/smic/logic0040ll/sc12mc_base_lvt_c40/r0p2/db/sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c.db'
+Loading db file '/eda/smic.40ll/arm/smic/logic0040ll/sc12mc_base_lvt_c40/r0p2/db/sc12mc_logic0040ll_base_lvt_c40_ff_typical_min_1p21v_m40c.db'
+
+  Optimization Complete
+  ---------------------
+Warning: The set_dont_touch_network command is used for clock clk, for which no sources are specified. (UID-997)
+1
