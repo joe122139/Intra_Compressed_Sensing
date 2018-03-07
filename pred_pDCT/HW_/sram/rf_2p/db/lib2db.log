@@ -1,0 +1,58 @@
+Warning: This dc_shell session is for library operations only. You should not perform optimization on the design. Please exit when you are finished with the library operation. (UIL-93)
+Reading '/home/jianbin/predDCT/HW/sram/rf_2p/rf_2p_hde_ff_1p21v_1p21v_125c.lib' ...
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[2]', The pin 'EMAA[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[1]', The pin 'EMAA[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[0]', The pin 'EMAA[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[2]', The pin 'EMAB[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[1]', The pin 'EMAB[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[0]', The pin 'EMAB[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3536, Cell 'rf_2p_hde', pin 'COLLDISN', The pin 'COLLDISN' does not have a internal_power group. (LBDB-607)
+Technology library 'USERLIB_ff_1p21v_1p21v_125c' read successfully
+Wrote the 'USERLIB_ff_1p21v_1p21v_125c' library to '/home/jianbin/predDCT/HW/sram/rf_2p/db/rf_2p_hde_ff_1p21v_1p21v_125c.db' successfully.
+Removing library 'USERLIB_ff_1p21v_1p21v_125c'
+Reading '/home/jianbin/predDCT/HW/sram/rf_2p/rf_2p_hde_ff_1p21v_1p21v_m40c.lib' ...
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[2]', The pin 'EMAA[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[1]', The pin 'EMAA[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[0]', The pin 'EMAA[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[2]', The pin 'EMAB[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[1]', The pin 'EMAB[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[0]', The pin 'EMAB[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3536, Cell 'rf_2p_hde', pin 'COLLDISN', The pin 'COLLDISN' does not have a internal_power group. (LBDB-607)
+Technology library 'USERLIB_ff_1p21v_1p21v_m40c' read successfully
+Wrote the 'USERLIB_ff_1p21v_1p21v_m40c' library to '/home/jianbin/predDCT/HW/sram/rf_2p/db/rf_2p_hde_ff_1p21v_1p21v_m40c.db' successfully.
+Removing library 'USERLIB_ff_1p21v_1p21v_m40c'
+Reading '/home/jianbin/predDCT/HW/sram/rf_2p/rf_2p_hde_ss_0p99v_0p99v_125c.lib' ...
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[2]', The pin 'EMAA[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[1]', The pin 'EMAA[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[0]', The pin 'EMAA[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[2]', The pin 'EMAB[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[1]', The pin 'EMAB[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[0]', The pin 'EMAB[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3536, Cell 'rf_2p_hde', pin 'COLLDISN', The pin 'COLLDISN' does not have a internal_power group. (LBDB-607)
+Technology library 'USERLIB_ss_0p99v_0p99v_125c' read successfully
+Wrote the 'USERLIB_ss_0p99v_0p99v_125c' library to '/home/jianbin/predDCT/HW/sram/rf_2p/db/rf_2p_hde_ss_0p99v_0p99v_125c.db' successfully.
+Removing library 'USERLIB_ss_0p99v_0p99v_125c'
+Reading '/home/jianbin/predDCT/HW/sram/rf_2p/rf_2p_hde_ss_0p99v_0p99v_m40c.lib' ...
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[2]', The pin 'EMAA[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[1]', The pin 'EMAA[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[0]', The pin 'EMAA[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[2]', The pin 'EMAB[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[1]', The pin 'EMAB[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[0]', The pin 'EMAB[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3536, Cell 'rf_2p_hde', pin 'COLLDISN', The pin 'COLLDISN' does not have a internal_power group. (LBDB-607)
+Technology library 'USERLIB_ss_0p99v_0p99v_m40c' read successfully
+Wrote the 'USERLIB_ss_0p99v_0p99v_m40c' library to '/home/jianbin/predDCT/HW/sram/rf_2p/db/rf_2p_hde_ss_0p99v_0p99v_m40c.db' successfully.
+Removing library 'USERLIB_ss_0p99v_0p99v_m40c'
+Reading '/home/jianbin/predDCT/HW/sram/rf_2p/rf_2p_hde_tt_1p10v_1p10v_25c.lib' ...
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[2]', The pin 'EMAA[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[1]', The pin 'EMAA[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3101, Cell 'rf_2p_hde', pin 'EMAA[0]', The pin 'EMAA[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[2]', The pin 'EMAB[2]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[1]', The pin 'EMAB[1]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3175, Cell 'rf_2p_hde', pin 'EMAB[0]', The pin 'EMAB[0]' does not have a internal_power group. (LBDB-607)
+Warning: Line 3536, Cell 'rf_2p_hde', pin 'COLLDISN', The pin 'COLLDISN' does not have a internal_power group. (LBDB-607)
+Technology library 'USERLIB_tt_1p10v_1p10v_25c' read successfully
+Wrote the 'USERLIB_tt_1p10v_1p10v_25c' library to '/home/jianbin/predDCT/HW/sram/rf_2p/db/rf_2p_hde_tt_1p10v_1p10v_25c.db' successfully.
+Removing library 'USERLIB_tt_1p10v_1p10v_25c'
+
+Thank you...

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : meas_pred
+Version: I-2013.12-SP2
+Date   : Sun Feb 12 20:39:48 2017
+****************************************
+
+Library(s) Used:
+
+    sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c (File: /eda/smic.40ll/arm/smic/logic0040ll/sc12mc_base_lvt_c40/r0p2/db/sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c.db)
+
+Number of ports:                          218
+Number of nets:                          3021
+Number of cells:                         2784
+Number of combinational cells:           2701
+Number of sequential cells:                83
+Number of macros/black boxes:               0
+Number of buf/inv:                        494
+Number of references:                     258
+
+Combinational area:               5795.076038
+Buf/Inv area:                      442.730407
+Noncombinational area:             488.695211
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                  6283.771250
+Total area:                       6283.771250
+1

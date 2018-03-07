@@ -1,0 +1,195 @@
+# datatable_memcomp Version: 4.0.5-beta17
+# common_memcomp Version: 4.0.5-beta22
+# lang compiler Version: 4.1.6-beta1 Jul 19 2012 13:55:19 
+# High Density Two Port Register File RVT RVT Compiler 
+#  LOGIC0040LL 40nm Process 0.589um^2 Bit Cell, RF-2P Datatable, Version r1p1
+# Copyright 1993-2017 ARM Limited. All Rights Reserved
+# Instance Name=rf_2p_hde
+# Process=LOGIC0040LL 
+# Words=1024 
+# Bits=8 
+# Mux=4 
+# Write Mask=off 
+# Extra Margin Adjustment=on 
+# Redundancy=off 
+# BIST Muxes=off 
+# Output Drive=6 
+# Power Routing Type=otc 
+# Top Metal=m5-m10 
+# Frequency=1 MHz 
+# Power Gating=off 
+# Retention=on 
+# Back Biasing=off 
+# Read Disturb Test=off 
+# Pipeline=off 
+# Units used in Datatable
+# Area          : uM^2
+# Voltage       : volts
+# Temperature   : Degree Celsius
+# Current       : mA
+# Time          : ns
+name      	ff_1p21v_1p21v_m40c	
+S		N
+geomx     	110.2150  
+geomy     	111.1150  
+volt      	1.2100    
+temp      	-40.0000  
+# Cycle time specific information. (b)
+tcycb_ema0	0.9301    
+tcycb_ema1	0.9575    
+tcycb_ema2	0.9965    
+tcycb_ema3	1.0671    
+tcycb_ema4	1.1266    
+tcycb_ema5	1.1899    
+tcycb_ema6	1.2864    
+tcycb_ema7	1.3502    
+# Cycle time specific information. (a)
+tcyca_ema0	0.8488    
+tcyca_ema1	0.8719    
+tcyca_ema2	0.9040    
+tcyca_ema3	0.9632    
+tcyca_ema4	1.0252    
+tcyca_ema5	1.0921    
+tcyca_ema6	1.1676    
+tcyca_ema7	1.2346    
+# Access time specific information. (a)
+taccqa_rd0	0.4578    
+taccqa_rd1	0.4578    
+taccqa_rd2	0.4578    
+taccqa_rd3	0.4578    
+taccqa_rd4	0.4578    
+taccqa_rd5	0.4578    
+taccqa_rd6	0.4578    
+taccqa_rd7	0.4578    
+# Standard memory feature setuphold specific information. (a)
+tasa      	0.1653    
+taha      	0.1021    
+tcensa    	0.0949    
+tcenha    	0.0853    
+# Standard memory feature setuphold specific information. (b)
+tasb      	0.1644    
+tahb      	0.0930    
+tcensb    	0.0946    
+tcenhb    	0.0829    
+tdsb      	0.0878    
+tdhb      	0.1614    
+# Clock Phase specific information. (a)
+tckha     	0.0957    
+tckla     	0.1294    
+tckra     	0.3060    
+# Clock Phase specific information. (b)
+tckhb     	0.0960    
+tcklb     	0.1294    
+tckrb     	0.3060    
+# Standard memory input capacitance information. (a) 
+icap_aa   	0.0009    
+icap_clka 	0.0108    
+icap_cena 	0.0018    
+# Standard memory input capacitance information. (b) 
+icap_ab   	0.0010    
+icap_clkb 	0.0109    
+icap_cenb 	0.0018    
+icap_db   	0.0016    
+kload_qa  	0.3332    
+# Clock collision specific information. (a)
+tcracwb_rd0	0.4476    
+tcracwb_rd1	0.4707    
+tcracwb_rd2	0.5028    
+tcracwb_rd3	0.5620    
+tcracwb_rd4	0.6240    
+tcracwb_rd5	0.6909    
+tcracwb_rd6	0.7664    
+tcracwb_rd7	0.8334    
+# Clock collision specific information. (b)
+tcwbcra_wr0	0.5224    
+tcwbcra_wr1	0.5497    
+tcwbcra_wr2	0.5887    
+tcwbcra_wr3	0.6594    
+tcwbcra_wr4	0.7188    
+tcwbcra_wr5	0.7822    
+tcwbcra_wr6	0.8787    
+tcwbcra_wr7	0.9425    
+# Read Current specific information. (a) 
+icc_c_rd0_a	1.2230e-04
+icc_p_rd0_a	1.9884e-03
+icc_c_rd1_a	1.2230e-04
+icc_p_rd1_a	2.0120e-03
+icc_c_rd2_a	1.2230e-04
+icc_p_rd2_a	2.0286e-03
+icc_c_rd3_a	1.2230e-04
+icc_p_rd3_a	2.0601e-03
+icc_c_rd4_a	1.2230e-04
+icc_p_rd4_a	2.1691e-03
+icc_c_rd5_a	1.2230e-04
+icc_p_rd5_a	2.2934e-03
+icc_c_rd6_a	1.2230e-04
+icc_p_rd6_a	2.3709e-03
+icc_c_rd7_a	1.2230e-04
+icc_p_rd7_a	2.3709e-03
+# Write Current specific information. (b) 
+icc_c_wr0_b	1.2841e-04
+icc_p_wr0_b	2.0343e-03
+icc_c_wr1_b	1.2841e-04
+icc_p_wr1_b	2.0591e-03
+icc_c_wr2_b	1.2841e-04
+icc_p_wr2_b	2.0766e-03
+icc_c_wr3_b	1.2841e-04
+icc_p_wr3_b	2.1096e-03
+icc_c_wr4_b	1.2841e-04
+icc_p_wr4_b	2.2241e-03
+icc_c_wr5_b	1.2841e-04
+icc_p_wr5_b	2.3545e-03
+icc_c_wr6_b	1.2841e-04
+icc_p_wr6_b	2.4360e-03
+icc_c_wr7_b	1.2841e-04
+icc_p_wr7_b	2.4360e-03
+# Deselect current specific information
+icc_c_desela	0.0000e+00
+icc_p_desela	2.1820e-04
+icc_c_deselb	0.0000e+00
+icc_p_deselb	3.7118e-04
+# Peak current specific information
+icc_c_peak	2.6091    
+icc_p_peak	24.2249   
+# Leakage Current specific information 
+icc_c_standby	8.2817e-04
+icc_p_standby	3.3547e-04
+icc_c_selective_precharge	7.8192e-04
+icc_p_selective_precharge	1.3250e-04
+icc_c_standby_ret1n	7.8423e-04
+icc_p_standby_ret1n	6.6464e-06
+# Clock noise limit specific information 
+pwn_clka  	0.0438    
+vn_clka   	0.2420    
+pwn_clkb  	0.0437    
+vn_clkb   	0.2420    
+# Supply noise limit specific information 
+vn_pwr    	0.1210    
+vn_gnd    	0.1210    
+# EMA feature specific information.
+icap_emaa 	0.0061    
+icap_emab 	0.0060    
+temasa    	0.9040    
+temaha    	1.2346    
+temasb    	0.9965    
+temahb    	1.3502    
+# COLLDISN feature specific information.
+icap_colldisn	0.0012    
+tcolldisnsa	0.9040    
+tcolldisnha	1.2346    
+tcolldisnsb	0.9965    
+tcolldisnhb	1.3502    
+# MTCMOS feature specific information.
+icap_ret1n	0.0042    
+# MTCMOS feature setuphold specific information. (a) 
+tret1nsa  	0.3361    
+tret1nha  	1.0014    
+# MTCMOS feature setuphold specific information. (b) 
+tret1nsb  	0.3457    
+tret1nhb  	1.3551    
+# MTCMOS feature specific information : Protocol sequence timing checks. (a) 
+tret1n_cenah	0.9084    
+tcena_ret1nh	1.0014    
+# MTCMOS feature specific information : Protocol sequence timing checks. (b) 
+tret1n_cenbh	1.0014    
+tcenb_ret1nh	1.0014    

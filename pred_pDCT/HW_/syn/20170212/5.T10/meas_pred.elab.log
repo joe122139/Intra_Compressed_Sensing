@@ -1,0 +1,58 @@
+Running PRESTO HDLC
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:188: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:189: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:193: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:97: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:98: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine meas_pred line 208 in file
+		'/home/jianbin/predDCT/HW/rtl/meas_pred.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    y_buf_bot_reg    | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     stages_reg      | Flip-flop | 1046  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    y_buf_le_reg     | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    y_ave_top_reg    | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'meas_pred'.
+Information: Building the design 'FSM' instantiated from design 'meas_pred' with
+	the parameters "PIC_WID_IN_PIX=8192,PIC_HT_IN_PIX=4096". (HDL-193)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:43: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:69: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:67: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:88: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:88: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:98: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:94: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/jianbin/predDCT/HW/rtl/FSM.sv:82: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 76 in file
+	'/home/jianbin/predDCT/HW/rtl/FSM.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            82            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine FSM_PIC_WID_IN_PIX8192_PIC_HT_IN_PIX4096 line 45 in file
+		'/home/jianbin/predDCT/HW/rtl/FSM.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        Y_reg        | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        X_reg        | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'SAD'. (HDL-193)
+Warning:  /home/jianbin/predDCT/HW/rtl/SAD.sv:36: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Information: Building the design 'stdcore_2prf' instantiated from design 'meas_pred' with
+	the parameters "AW=11,DW=12,DEPTH=2048". (HDL-193)
+Presto compilation completed successfully.
+1

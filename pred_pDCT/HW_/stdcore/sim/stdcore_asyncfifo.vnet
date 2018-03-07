@@ -1,0 +1,159 @@
+
+module stdcore_asyncfifo ( arst_n, p_rst_n, p_clk, p, p_val, p_rdy, c_rst_n, 
+        c_clk, c, c_val, c_rdy );
+  input [7:0] p;
+  output [7:0] c;
+  input arst_n, p_rst_n, p_clk, p_val, c_rst_n, c_clk, c_rdy;
+  output p_rdy, c_val;
+  wire   cp_addr_g_0_, p_addr_0_, N16, p_addr_g_0_, c_addr_g_0_, N22,
+         c_addr_0_, pc_addr_g_0_, N34, N38, n31, n32, n33, n340, n35, n36, n37,
+         n380, n39, n40, n41, n42, n43, n44, n45, n46, n47, n48, n49, n50, n51,
+         n52, n53, n54, n55, n56, n57, n58, n59, n60, n61, n62, n63, n64, n65,
+         n66, n67, n68, n69, n70, n71, n72, n73, n74, n75, n76, n77, n78, n79,
+         n80, n81, n82, n83, n84, n85, n86, n87, n88, n89, n90, n91, n92, n93,
+         n94, n95, n96, n97, n98, n99, n100, n101, n102;
+  wire   [14:0] memrw_mem;
+
+  INV_X0P5B_A12TL40 U65 ( .A(arst_n), .Y(N16) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__6_ ( .D(n45), .CK(p_clk), .Q(memrw_mem[6])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__5_ ( .D(n44), .CK(p_clk), .Q(memrw_mem[5])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__4_ ( .D(n43), .CK(p_clk), .Q(memrw_mem[4])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__3_ ( .D(n42), .CK(p_clk), .Q(memrw_mem[3])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__2_ ( .D(n41), .CK(p_clk), .Q(memrw_mem[2])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__1_ ( .D(n40), .CK(p_clk), .Q(memrw_mem[1])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_1__0_ ( .D(n39), .CK(p_clk), .Q(memrw_mem[0])
+         );
+  DFFQ_X1M_A12TL40 c_reg_7_ ( .D(n380), .CK(c_clk), .Q(c[7]) );
+  DFFQ_X1M_A12TL40 c_reg_6_ ( .D(n37), .CK(c_clk), .Q(c[6]) );
+  DFFQ_X1M_A12TL40 c_reg_5_ ( .D(n36), .CK(c_clk), .Q(c[5]) );
+  DFFQ_X1M_A12TL40 c_reg_4_ ( .D(n35), .CK(c_clk), .Q(c[4]) );
+  DFFQ_X1M_A12TL40 c_reg_3_ ( .D(n340), .CK(c_clk), .Q(c[3]) );
+  DFFQ_X1M_A12TL40 c_reg_2_ ( .D(n33), .CK(c_clk), .Q(c[2]) );
+  DFFQ_X1M_A12TL40 c_reg_1_ ( .D(n32), .CK(c_clk), .Q(c[1]) );
+  DFFQ_X1M_A12TL40 c_reg_0_ ( .D(n31), .CK(c_clk), .Q(c[0]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__7_ ( .D(n54), .CK(p_clk), .Q(memrw_mem[14]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__6_ ( .D(n53), .CK(p_clk), .Q(memrw_mem[13]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__5_ ( .D(n52), .CK(p_clk), .Q(memrw_mem[12]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__4_ ( .D(n51), .CK(p_clk), .Q(memrw_mem[11]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__3_ ( .D(n50), .CK(p_clk), .Q(memrw_mem[10]) );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__2_ ( .D(n49), .CK(p_clk), .Q(memrw_mem[9])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__1_ ( .D(n48), .CK(p_clk), .Q(memrw_mem[8])
+         );
+  DFFQ_X1M_A12TL40 memrw_mem_reg_0__0_ ( .D(n47), .CK(p_clk), .Q(memrw_mem[7])
+         );
+  DFFRPQ_X1M_A12TL40 p_addr_g_reg_0_ ( .D(n55), .CK(p_clk), .R(N16), .Q(
+        p_addr_g_0_) );
+  DFFRPQ_X1M_A12TL40 cp_addr_g_reg_0_ ( .D(N22), .CK(p_clk), .R(N16), .Q(
+        cp_addr_g_0_) );
+  DFFRPQ_X1M_A12TL40 c_val_reg ( .D(N34), .CK(c_clk), .R(N16), .Q(c_val) );
+  DFFRPQ_X1M_A12TL40 c_addr_g_reg_0_ ( .D(n57), .CK(c_clk), .R(N16), .Q(
+        c_addr_g_0_) );
+  DFFRPQ_X1M_A12TL40 p_addr_reg_0_ ( .D(n56), .CK(p_clk), .R(N16), .Q(
+        p_addr_0_) );
+  DFFRPQ_X1M_A12TL40 pc_addr_g_reg_0_ ( .D(N38), .CK(c_clk), .R(N16), .Q(
+        pc_addr_g_0_) );
+  DFFRPQ_X1M_A12TL40 c_addr_reg_0_ ( .D(n58), .CK(c_clk), .R(N16), .Q(
+        c_addr_0_) );
+  DFFQN_X1M_A12TL40 memrw_mem_reg_1__7_ ( .D(n46), .CK(p_clk), .QN(n102) );
+  INV_X1M_A12TL40 U66 ( .A(n65), .Y(n68) );
+  NAND3_X1A_A12TL40 U67 ( .A(n79), .B(pc_addr_g_0_), .C(c_addr_0_), .Y(n67) );
+  AOI21_X1M_A12TL40 U68 ( .A0(pc_addr_g_0_), .A1(c_addr_g_0_), .B0(n64), .Y(
+        n65) );
+  OAI21_X1M_A12TL40 U69 ( .A0(pc_addr_g_0_), .A1(c_addr_g_0_), .B0(n77), .Y(
+        n64) );
+  OAI21_X1M_A12TL40 U70 ( .A0(c_addr_0_), .A1(n68), .B0(n67), .Y(n72) );
+  NOR3BB_X1M_A12TL40 U71 ( .AN(n68), .BN(n67), .C(n66), .Y(n74) );
+  AOI21_X1M_A12TL40 U72 ( .A0(c_addr_0_), .A1(n65), .B0(n66), .Y(n73) );
+  INV_X1M_A12TL40 U73 ( .A(memrw_mem[0]), .Y(n99) );
+  INV_X1M_A12TL40 U74 ( .A(memrw_mem[1]), .Y(n94) );
+  INV_X1M_A12TL40 U75 ( .A(memrw_mem[2]), .Y(n92) );
+  NOR3_X1A_A12TL40 U76 ( .A(pc_addr_g_0_), .B(c_addr_0_), .C(n77), .Y(n66) );
+  INV_X1M_A12TL40 U77 ( .A(p_addr_0_), .Y(n83) );
+  NAND2_X1A_A12TL40 U78 ( .A(c_val), .B(c_rdy), .Y(n77) );
+  INV_X1M_A12TL40 U79 ( .A(n77), .Y(n79) );
+  INV_X1M_A12TL40 U80 ( .A(c_rst_n), .Y(n76) );
+  INV_X1M_A12TL40 U81 ( .A(c_addr_g_0_), .Y(n75) );
+  INV_X1M_A12TL40 U82 ( .A(p_addr_g_0_), .Y(n80) );
+  INV_X1M_A12TL40 U83 ( .A(p_rst_n), .Y(n81) );
+  NAND2_X1A_A12TL40 U84 ( .A(n84), .B(n83), .Y(n82) );
+  INV_X1M_A12TL40 U85 ( .A(p[7]), .Y(n85) );
+  INV_X1M_A12TL40 U86 ( .A(p[0]), .Y(n100) );
+  INV_X1M_A12TL40 U87 ( .A(p[1]), .Y(n95) );
+  INV_X1M_A12TL40 U88 ( .A(p[2]), .Y(n93) );
+  INV_X1M_A12TL40 U89 ( .A(memrw_mem[3]), .Y(n90) );
+  INV_X1M_A12TL40 U90 ( .A(p[3]), .Y(n91) );
+  INV_X1M_A12TL40 U91 ( .A(memrw_mem[4]), .Y(n96) );
+  INV_X1M_A12TL40 U92 ( .A(p[4]), .Y(n97) );
+  INV_X1M_A12TL40 U93 ( .A(memrw_mem[5]), .Y(n88) );
+  INV_X1M_A12TL40 U94 ( .A(p[5]), .Y(n89) );
+  NAND2_X1A_A12TL40 U95 ( .A(p_addr_0_), .B(n84), .Y(n98) );
+  INV_X1M_A12TL40 U96 ( .A(n98), .Y(n101) );
+  INV_X1M_A12TL40 U97 ( .A(memrw_mem[6]), .Y(n86) );
+  INV_X1M_A12TL40 U98 ( .A(p[6]), .Y(n87) );
+  XOR2_X0P7M_A12TL40 U99 ( .A(cp_addr_g_0_), .B(n83), .Y(p_rdy) );
+  NOR2_X1A_A12TL40 U100 ( .A(n80), .B(n76), .Y(N38) );
+  NOR2_X1A_A12TL40 U101 ( .A(n74), .B(n76), .Y(N34) );
+  NOR2_X1A_A12TL40 U102 ( .A(n75), .B(n81), .Y(N22) );
+  OAI21_X1M_A12TL40 U103 ( .A0(n73), .A1(n99), .B0(n71), .Y(n31) );
+  OAI21_X1M_A12TL40 U104 ( .A0(n73), .A1(n94), .B0(n70), .Y(n32) );
+  OAI21_X1M_A12TL40 U105 ( .A0(n73), .A1(n92), .B0(n69), .Y(n33) );
+  AOI22_X0P5M_A12TL40 U106 ( .A0(n72), .A1(memrw_mem[10]), .B0(c[3]), .B1(n74), 
+        .Y(n59) );
+  OAI21_X0P5M_A12TL40 U107 ( .A0(n73), .A1(n90), .B0(n59), .Y(n340) );
+  AOI22_X0P5M_A12TL40 U108 ( .A0(n72), .A1(memrw_mem[11]), .B0(c[4]), .B1(n74), 
+        .Y(n60) );
+  OAI21_X0P5M_A12TL40 U109 ( .A0(n73), .A1(n96), .B0(n60), .Y(n35) );
+  AOI22_X0P5M_A12TL40 U110 ( .A0(n72), .A1(memrw_mem[12]), .B0(c[5]), .B1(n74), 
+        .Y(n61) );
+  OAI21_X0P5M_A12TL40 U111 ( .A0(n73), .A1(n88), .B0(n61), .Y(n36) );
+  AOI22_X0P5M_A12TL40 U112 ( .A0(n72), .A1(memrw_mem[13]), .B0(c[6]), .B1(n74), 
+        .Y(n62) );
+  OAI21_X0P5M_A12TL40 U113 ( .A0(n73), .A1(n86), .B0(n62), .Y(n37) );
+  AOI22_X0P5M_A12TL40 U114 ( .A0(n72), .A1(memrw_mem[14]), .B0(c[7]), .B1(n74), 
+        .Y(n63) );
+  OAI21_X0P5M_A12TL40 U115 ( .A0(n73), .A1(n102), .B0(n63), .Y(n380) );
+  AOI22_X1M_A12TL40 U116 ( .A0(n74), .A1(c[2]), .B0(memrw_mem[9]), .B1(n72), 
+        .Y(n69) );
+  AOI22_X1M_A12TL40 U117 ( .A0(n74), .A1(c[1]), .B0(memrw_mem[8]), .B1(n72), 
+        .Y(n70) );
+  AOI22_X1M_A12TL40 U118 ( .A0(n74), .A1(c[0]), .B0(memrw_mem[7]), .B1(n72), 
+        .Y(n71) );
+  AOI221_X1M_A12TL40 U119 ( .A0(n79), .A1(c_addr_0_), .B0(n77), .B1(n75), .C0(
+        n76), .Y(n57) );
+  INV_X0P6B_A12TL40 U120 ( .A(c_addr_0_), .Y(n78) );
+  AOI221_X1M_A12TL40 U121 ( .A0(c_addr_0_), .A1(n79), .B0(n78), .B1(n77), .C0(
+        n76), .Y(n58) );
+  AND2_X1M_A12TL40 U122 ( .A(p_val), .B(p_rdy), .Y(n84) );
+  OAI22BB_X1M_A12TL40 U123 ( .A0(n82), .A1(n91), .B0N(n82), .B1N(memrw_mem[10]), .Y(n50) );
+  OAI22BB_X1M_A12TL40 U124 ( .A0(n82), .A1(n100), .B0N(n82), .B1N(memrw_mem[7]), .Y(n47) );
+  OAI22BB_X1M_A12TL40 U125 ( .A0(n82), .A1(n95), .B0N(n82), .B1N(memrw_mem[8]), 
+        .Y(n48) );
+  OAI22BB_X1M_A12TL40 U126 ( .A0(n82), .A1(n93), .B0N(n82), .B1N(memrw_mem[9]), 
+        .Y(n49) );
+  OAI22BB_X1M_A12TL40 U127 ( .A0(n82), .A1(n85), .B0N(n82), .B1N(memrw_mem[14]), .Y(n54) );
+  OAI22BB_X1M_A12TL40 U128 ( .A0(n82), .A1(n97), .B0N(n82), .B1N(memrw_mem[11]), .Y(n51) );
+  OAI22BB_X1M_A12TL40 U129 ( .A0(n82), .A1(n89), .B0N(n82), .B1N(memrw_mem[12]), .Y(n52) );
+  OAI22BB_X1M_A12TL40 U130 ( .A0(n82), .A1(n87), .B0N(n82), .B1N(memrw_mem[13]), .Y(n53) );
+  OA21A1OI2_X1M_A12TL40 U131 ( .A0(n84), .A1(n80), .B0(n82), .C0(n81), .Y(n55)
+         );
+  OA21A1OI2_X1M_A12TL40 U132 ( .A0(n84), .A1(n83), .B0(n82), .C0(n81), .Y(n56)
+         );
+  AOI22_X1M_A12TL40 U133 ( .A0(n101), .A1(n85), .B0(n102), .B1(n98), .Y(n46)
+         );
+  AOI22_X1M_A12TL40 U134 ( .A0(n101), .A1(n87), .B0(n86), .B1(n98), .Y(n45) );
+  AOI22_X1M_A12TL40 U135 ( .A0(n101), .A1(n89), .B0(n88), .B1(n98), .Y(n44) );
+  AOI22_X1M_A12TL40 U136 ( .A0(n101), .A1(n91), .B0(n90), .B1(n98), .Y(n42) );
+  AOI22_X1M_A12TL40 U137 ( .A0(n101), .A1(n93), .B0(n92), .B1(n98), .Y(n41) );
+  AOI22_X1M_A12TL40 U138 ( .A0(n101), .A1(n95), .B0(n94), .B1(n98), .Y(n40) );
+  AOI22_X1M_A12TL40 U139 ( .A0(n101), .A1(n97), .B0(n96), .B1(n98), .Y(n43) );
+  AOI22_X1M_A12TL40 U140 ( .A0(n101), .A1(n100), .B0(n99), .B1(n98), .Y(n39)
+         );
+endmodule
+

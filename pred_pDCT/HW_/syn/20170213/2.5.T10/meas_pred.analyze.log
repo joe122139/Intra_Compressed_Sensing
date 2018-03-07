@@ -1,0 +1,106 @@
+== ANALYZE autoread all files ==
+
+Starting ANALYZE autoread mode...
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl'.  (AUTOREAD-100)
+Information: Source SAD.sv ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source meas_pred.sv ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source FSM.sv ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/rtl/FSM.sv'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/rtl/SAD.sv'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/rtl/meas_pred.sv'.  (AUTOREAD-101)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_2prf.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_p1c2ck.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_spram.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bfifo.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_asyncfifo.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_pre.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_b2prf.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_ubfifo.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/bfifo_boundary.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo.v'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v'.  (AUTOREAD-100)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/rtl'.  (AUTOREAD-101)
+Information: Scanning file { bfifo_boundary.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_rfifo_pre.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_b2prf.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_2prf.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_spram.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_ubfifo.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_rfifo.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_rfifo_p1c2ck.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_asyncfifo.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_bbfifo.v }. (AUTOREAD-303)
+Information: Scanning file { stdcore_bfifo.v }. (AUTOREAD-303)
+Removing previous elaborated design stdcore_2prf_DW13_AW11_DEPTH2048
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_spram.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_b2prf.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v
+Warning:  /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v:100: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  Little argument or return value checking implemented for system task or function '$stop'. (VER-209)
+Warning:  /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v:101: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v:100: Unsupported system task '$stop' will be ignored for synthesis. (VER-274)
+Warning:  /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v:101: Unsupported system task '$stop' will be ignored for synthesis. (VER-274)
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/bfifo_boundary.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_2prf.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bfifo.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_ubfifo.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_pre.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_p1c2ck.v
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/stdcore/rtl/stdcore_asyncfifo.v
+Presto compilation completed successfully.
+Autoread command completed successfully.
+1
+== ANALYZE autoread all files ==
+
+Starting ANALYZE autoread mode...
+Information: Adding '/home/jianbin/predDCT/HW/rtl'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/rtl/SAD.sv'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/rtl/meas_pred.sv'.  (AUTOREAD-100)
+Information: Adding '/home/jianbin/predDCT/HW/rtl/FSM.sv'.  (AUTOREAD-100)
+Information: Source stdcore_2prf.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_rfifo_p1c2ck.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_spram.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_bfifo.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_asyncfifo.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_rfifo_pre.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_b2prf.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_ubfifo.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source bfifo_boundary.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_rfifo.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Source stdcore_bbfifo.v ignored by autoread due to filtering.  (AUTOREAD-102)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/bfifo_boundary.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_2prf.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_asyncfifo.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_b2prf.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bbfifo.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_bfifo.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_p1c2ck.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_rfifo_pre.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_spram.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl/stdcore_ubfifo.v'.  (AUTOREAD-101)
+Information: Removing from autoread database '/home/jianbin/predDCT/HW/stdcore/rtl'.  (AUTOREAD-101)
+Information: Scanning file { meas_pred.sv }. (AUTOREAD-303)
+Information: Scanning file { SAD.sv }. (AUTOREAD-303)
+Information: Scanning file { FSM.sv }. (AUTOREAD-303)
+Removing previous elaborated design meas_pred
+Compiling source file /home/jianbin/predDCT/HW/rtl/FSM.sv
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/rtl/SAD.sv
+Presto compilation completed successfully.
+Compiling source file /home/jianbin/predDCT/HW/rtl/meas_pred.sv
+Warning:  /home/jianbin/predDCT/HW/rtl/meas_pred.sv:63: Forward references to 'stages' are non-standard. This may be treated as an error in the future. (VER-733)
+Presto compilation completed successfully.
+Autoread command completed successfully.
+1

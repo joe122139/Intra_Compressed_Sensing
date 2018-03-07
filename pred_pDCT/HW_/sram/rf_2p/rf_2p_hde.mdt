@@ -1,0 +1,479 @@
+// fastscan_memcomp Version: 4.0.5-EAC4 
+// common_memcomp Version: 4.0.5-beta22
+// lang compiler Version: 4.1.6-beta1 Jul 19 2012 13:55:19
+//
+//       CONFIDENTIAL AND PROPRIETARY SOFTWARE OF ARM PHYSICAL IP, INC.
+//      
+//       Copyright (c) 1993 - 2017 ARM Physical IP, Inc.  All Rights Reserved.
+//      
+//       Use of this Software is subject to the terms and conditions of the
+//       applicable license agreement with ARM Physical IP, Inc.
+//       In addition, this Software is protected by patents, copyright law 
+//       and international treaties.
+//      
+//       The copyright notice(s) in this Software does not indicate actual or
+//       intended publication of this Software.
+//
+//      Fastscan model for Synchronous Two-Port Register File
+//
+//       Instance Name:              rf_2p_hde
+//       Words:                      1024
+//       Bits:                       8
+//       Mux:                        4
+//       Drive:                      6
+//       Write Mask:                 Off
+//       Write Thru:                 Off
+//       Extra Margin Adjustment:    On
+//       Redundant Columns:          0
+//       Test Muxes                  Off
+//       Power Gating:               Off
+//       Retention:                  On
+//       Pipeline:                   Off
+//       Read Disturb Test:	        Off
+//       
+//       Creation Date:  Sun Oct 22 16:19:44 2017
+//       Version: 	r1p1
+//      Modeling Assumptions: This is Sequential Synchronous Mentor model
+//          with Mentor ATPG primitives used to test UTI and generate test
+//          vectors.
+//
+//      Modeling Limitations: None.
+//
+//      Known Bugs: None.
+//
+//      Known Work Arounds: N/A
+//
+model rf_2p_hde_scanflop (Q, SI, D, SE, CLK, Xout) (
+   input (SI) ()
+   input (D) ()
+   input (SE) ()
+   input (CLK) ()
+   input (Xout) ()
+   output (Q) (
+     primitive = _tiex  mx_tiex (mx);
+     primitive = _tie0  m0_tie0 (m0_0);
+     primitive = _tie0  m1_tie0 (m0_1);
+     primitive = _mux m1 (D, SI, SE, n1);
+     primitive = _mux m2 (n1, mx, Xout, n2);
+     primitive = _dff  r1 ( m0_0, m0_1, CLK, n2, Q,  );
+   )
+)
+model rf_2p_hde_bitcell (CLK, WRITE, READ, WA, RA, D, Xout, Q) (
+   intern (WA_ram, RA_ram) (array = 9:0;)
+   input (CLK) ()
+   intern (READ_ram) ()
+   input (WRITE) ()
+   input (READ) ()
+   input (D) ()
+   input (WA, RA) (array = 9:0;)
+   input (Xout) ()
+   output (Q) (
+ 
+ 
+   primitive = _tiex  mx_tiex ( mx );
+   primitive = _mux  WRITE_MUX ( WRITE, mx, Xout, WRITE_ram );
+   primitive = _mux  D_mux ( D, mx, Xout, D_ram );
+   primitive = _mux  AA0_mux ( WA[0], mx, Xout, WA_ram[0] );
+   primitive = _mux  AA1_mux ( WA[1], mx, Xout, WA_ram[1] );
+   primitive = _mux  AA2_mux ( WA[2], mx, Xout, WA_ram[2] );
+   primitive = _mux  AA3_mux ( WA[3], mx, Xout, WA_ram[3] );
+   primitive = _mux  AA4_mux ( WA[4], mx, Xout, WA_ram[4] );
+   primitive = _mux  AA5_mux ( WA[5], mx, Xout, WA_ram[5] );
+   primitive = _mux  AA6_mux ( WA[6], mx, Xout, WA_ram[6] );
+   primitive = _mux  AA7_mux ( WA[7], mx, Xout, WA_ram[7] );
+   primitive = _mux  AA8_mux ( WA[8], mx, Xout, WA_ram[8] );
+   primitive = _mux  AA9_mux ( WA[9], mx, Xout, WA_ram[9] );
+   primitive = _mux  READ_MUX ( READ, mx, Xout, READ_ram );
+   primitive = _mux  RA0_mux ( RA[0], mx, Xout, RA_ram[0] );
+   primitive = _mux  RA1_mux ( RA[1], mx, Xout, RA_ram[1] );
+   primitive = _mux  RA2_mux ( RA[2], mx, Xout, RA_ram[2] );
+   primitive = _mux  RA3_mux ( RA[3], mx, Xout, RA_ram[3] );
+   primitive = _mux  RA4_mux ( RA[4], mx, Xout, RA_ram[4] );
+   primitive = _mux  RA5_mux ( RA[5], mx, Xout, RA_ram[5] );
+   primitive = _mux  RA6_mux ( RA[6], mx, Xout, RA_ram[6] );
+   primitive = _mux  RA7_mux ( RA[7], mx, Xout, RA_ram[7] );
+   primitive = _mux  RA8_mux ( RA[8], mx, Xout, RA_ram[8] );
+   primitive = _mux  RA9_mux ( RA[9], mx, Xout, RA_ram[9] );
+           data_size = 1;
+           address_size = 10;
+           min_address = 0;
+           max_address = 1023;
+           edge_trigger = w;
+           read_write_conflict = XW;
+           // Verilog RAM has no Set or Reset pin : 
+           primitive = _cram mem ( , ,
+             // Following write port will Hold in-memory data when not writing.
+             _write { , , } (CLK, WRITE_ram, WA_ram, D_ram),
+             // Following read port will Hold output data after reading.
+             _read { , , ,} ( , READ_ram, , RA_ram, Q)
+           );	 
+   )
+)
+model rf_2p_hde (QA, CLKA, CENA, AA, CLKB, CENB, AB, DB, EMAA, EMAB, RET1N, COLLDISN) (
+  input (CLKA) ()
+  input (CENA) ()
+  input (AA) (array = 9 : 0; )
+  input (CLKB) ()
+  input (CENB) ()
+  input (AB) (array = 9 : 0; )
+  input (DB) (array = 7 : 0; )
+  input (EMAA) (array = 2 : 0; used=false;fault=none;)
+  input (EMAB) (array = 2 : 0; used=false;fault=none;)
+  input (RET1N) (used=false;fault=none;)
+  input (COLLDISN) (used=false;fault=none;)
+   intern (mtie_sel0) (primitive = _tie0  m0_sel0 ( mtie_sel0 );)
+   intern (tiex_readq) (primitive = _tiex mtiex_readq(tiex_readq);)
+   intern (m0) (primitive = _tie0 m0_tie0(m0);)
+   intern (SIA[0]) (primitive = _buf  wSIA_tie0 (m0, SIA[0]);)
+   intern (SIA[1]) (primitive = _buf  wSIA_tie1 (m0, SIA[1]);)
+   intern (BUS_SIA) (array = 1 : 0; 
+      primitive = _buf wbSIA0 (SIA[0], BUS_SIA[0]);
+      primitive = _buf wbSIA1 (SIA[1], BUS_SIA[1]);
+   )
+   intern (BUS_AA) (array = 9 : 0; 
+      primitive = _buf  bBUS_AA0 ( AA[0], BUS_AA[0]);
+      primitive = _buf  bBUS_AA1 ( AA[1], BUS_AA[1]);
+      primitive = _buf  bBUS_AA2 ( AA[2], BUS_AA[2]);
+      primitive = _buf  bBUS_AA3 ( AA[3], BUS_AA[3]);
+      primitive = _buf  bBUS_AA4 ( AA[4], BUS_AA[4]);
+      primitive = _buf  bBUS_AA5 ( AA[5], BUS_AA[5]);
+      primitive = _buf  bBUS_AA6 ( AA[6], BUS_AA[6]);
+      primitive = _buf  bBUS_AA7 ( AA[7], BUS_AA[7]);
+      primitive = _buf  bBUS_AA8 ( AA[8], BUS_AA[8]);
+      primitive = _buf  bBUS_AA9 ( AA[9], BUS_AA[9]);
+   )
+  intern (BMUX_AA) (array = 9 : 0;
+    primitive = _buf bBMUX_AA0(BUS_AA[0], BMUX_AA[0]);
+    primitive = _buf bBMUX_AA1(BUS_AA[1], BMUX_AA[1]);
+    primitive = _buf bBMUX_AA2(BUS_AA[2], BMUX_AA[2]);
+    primitive = _buf bBMUX_AA3(BUS_AA[3], BMUX_AA[3]);
+    primitive = _buf bBMUX_AA4(BUS_AA[4], BMUX_AA[4]);
+    primitive = _buf bBMUX_AA5(BUS_AA[5], BMUX_AA[5]);
+    primitive = _buf bBMUX_AA6(BUS_AA[6], BMUX_AA[6]);
+    primitive = _buf bBMUX_AA7(BUS_AA[7], BMUX_AA[7]);
+    primitive = _buf bBMUX_AA8(BUS_AA[8], BMUX_AA[8]);
+    primitive = _buf bBMUX_AA9(BUS_AA[9], BMUX_AA[9]);
+  )
+  intern (BMUX_CENA) (primitive = _buf bBMUX_CENA(CENA, BMUX_CENA);)
+
+  intern (BMUX_AA_n) (array = 9 : 1; 
+  primitive = _inv nBMUX_AA_n1(BMUX_AA[1], BMUX_AA_n[1]);
+  primitive = _inv nBMUX_AA_n2(BMUX_AA[2], BMUX_AA_n[2]);
+  primitive = _inv nBMUX_AA_n3(BMUX_AA[3], BMUX_AA_n[3]);
+  primitive = _inv nBMUX_AA_n4(BMUX_AA[4], BMUX_AA_n[4]);
+  primitive = _inv nBMUX_AA_n5(BMUX_AA[5], BMUX_AA_n[5]);
+  primitive = _inv nBMUX_AA_n6(BMUX_AA[6], BMUX_AA_n[6]);
+  primitive = _inv nBMUX_AA_n7(BMUX_AA[7], BMUX_AA_n[7]);
+  primitive = _inv nBMUX_AA_n8(BMUX_AA[8], BMUX_AA_n[8]);
+  primitive = _inv nBMUX_AA_n9(BMUX_AA[9], BMUX_AA_n[9]);
+  )
+
+  intern (A_max) (array = 9 : 0; 
+    primitive = _tie1  bA_max0 ( A_max[0] );
+    primitive = _tie1  bA_max1 ( A_max[1] );
+    primitive = _tie1  bA_max2 ( A_max[2] );
+    primitive = _tie1  bA_max3 ( A_max[3] );
+    primitive = _tie1  bA_max4 ( A_max[4] );
+    primitive = _tie1  bA_max5 ( A_max[5] );
+    primitive = _tie1  bA_max6 ( A_max[6] );
+    primitive = _tie1  bA_max7 ( A_max[7] );
+    primitive = _tie1  bA_max8 ( A_max[8] );
+    primitive = _tie1  bA_max9 ( A_max[9] );
+  )
+
+  intern (A_max_n) (array = 9 : 0 ;
+  primitive = _inv bA_max_n0(A_max[0], A_max_n[0]);
+  primitive = _inv bA_max_n1(A_max[1], A_max_n[1]);
+  primitive = _inv bA_max_n2(A_max[2], A_max_n[2]);
+  primitive = _inv bA_max_n3(A_max[3], A_max_n[3]);
+  primitive = _inv bA_max_n4(A_max[4], A_max_n[4]);
+  primitive = _inv bA_max_n5(A_max[5], A_max_n[5]);
+  primitive = _inv bA_max_n6(A_max[6], A_max_n[6]);
+  primitive = _inv bA_max_n7(A_max[7], A_max_n[7]);
+  primitive = _inv bA_max_n8(A_max[8], A_max_n[8]);
+  primitive = _inv bA_max_n9(A_max[9], A_max_n[9]);
+  )
+
+  intern (AA_m) (array = 9 : 0 ;
+  primitive = _and aAA_m0(BMUX_AA[0], A_max_n[0], AA_m[0]);
+  primitive = _and aAA_m1(BMUX_AA[1], A_max_n[1], AA_m[1]);
+  primitive = _and aAA_m2(BMUX_AA[2], A_max_n[2], AA_m[2]);
+  primitive = _and aAA_m3(BMUX_AA[3], A_max_n[3], AA_m[3]);
+  primitive = _and aAA_m4(BMUX_AA[4], A_max_n[4], AA_m[4]);
+  primitive = _and aAA_m5(BMUX_AA[5], A_max_n[5], AA_m[5]);
+  primitive = _and aAA_m6(BMUX_AA[6], A_max_n[6], AA_m[6]);
+  primitive = _and aAA_m7(BMUX_AA[7], A_max_n[7], AA_m[7]);
+  primitive = _and aAA_m8(BMUX_AA[8], A_max_n[8], AA_m[8]);
+  primitive = _and aAA_m9(BMUX_AA[9], A_max_n[9], AA_m[9]);
+  )
+
+  intern (m_AA) (array = 9 : 1; 
+  primitive = _and am_AA1(BMUX_AA_n[1], A_max[1], m_AA[1]);
+  primitive = _and am_AA2(BMUX_AA_n[2], A_max[2], m_AA[2]);
+  primitive = _and am_AA3(BMUX_AA_n[3], A_max[3], m_AA[3]);
+  primitive = _and am_AA4(BMUX_AA_n[4], A_max[4], m_AA[4]);
+  primitive = _and am_AA5(BMUX_AA_n[5], A_max[5], m_AA[5]);
+  primitive = _and am_AA6(BMUX_AA_n[6], A_max[6], m_AA[6]);
+  primitive = _and am_AA7(BMUX_AA_n[7], A_max[7], m_AA[7]);
+  primitive = _and am_AA8(BMUX_AA_n[8], A_max[8], m_AA[8]);
+  primitive = _and am_AA9(BMUX_AA_n[9], A_max[9], m_AA[9]);
+  )
+
+  intern (EQ_A) (array = 9 : 1 ;
+    primitive = _nor nEQ_A1(m_AA[1], AA_m[1], EQ_A[1]);
+    primitive = _nor nEQ_A2(m_AA[2], AA_m[2], EQ_A[2]);
+    primitive = _nor nEQ_A3(m_AA[3], AA_m[3], EQ_A[3]);
+    primitive = _nor nEQ_A4(m_AA[4], AA_m[4], EQ_A[4]);
+    primitive = _nor nEQ_A5(m_AA[5], AA_m[5], EQ_A[5]);
+    primitive = _nor nEQ_A6(m_AA[6], AA_m[6], EQ_A[6]);
+    primitive = _nor nEQ_A7(m_AA[7], AA_m[7], EQ_A[7]);
+    primitive = _nor nEQ_A8(m_AA[8], AA_m[8], EQ_A[8]);
+    primitive = _nor nEQ_A9(m_AA[9], AA_m[9], EQ_A[9]);
+  )
+
+   intern (XoutAi) (array = 8 : 0;     primitive = _and aXoutAi0(AA_m[0], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3], EQ_A[2], EQ_A[1], XoutAi[0]);
+     primitive = _and aXoutAi1(AA_m[1], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3], EQ_A[2], XoutAi[1]);
+     primitive = _and aXoutAi2(AA_m[2], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3], XoutAi[2]);
+     primitive = _and aXoutAi3(AA_m[3], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], XoutAi[3]);
+     primitive = _and aXoutAi4(AA_m[4], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], XoutAi[4]);
+     primitive = _and aXoutAi5(AA_m[5], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], XoutAi[5]);
+     primitive = _and aXoutAi6(AA_m[6], EQ_A[9], EQ_A[8], EQ_A[7], XoutAi[6]);
+     primitive = _and aXoutAi7(AA_m[7], EQ_A[9], EQ_A[8], XoutAi[7]);
+     primitive = _and aXoutAi8(AA_m[8], EQ_A[9], XoutAi[8]);
+  )
+  intern (XoutAifTemp) (primitive = _or oXoutAifTemp (AA_m[9], XoutAi[0], XoutAi[1], XoutAi[2], XoutAi[3], XoutAi[4], XoutAi[5], XoutAi[6], XoutAi[7], XoutAi[8], XoutAifTemp);)
+  intern (XoutAif) (primitive = _and oXoutAif (XoutAifTemp, NOT_CENA, XoutAif);)
+
+  intern (NOT_CENA) (primitive = _inv iNOT_CENA(BMUX_CENA, NOT_CENA);)
+  intern (READA) (array = 7:0;
+  primitive = _buf bREADA0(NOT_CENA, READA[0]);
+  primitive = _buf bREADA1(NOT_CENA, READA[1]);
+  primitive = _buf bREADA2(NOT_CENA, READA[2]);
+  primitive = _buf bREADA3(NOT_CENA, READA[3]);
+  primitive = _buf bREADA4(NOT_CENA, READA[4]);
+  primitive = _buf bREADA5(NOT_CENA, READA[5]);
+  primitive = _buf bREADA6(NOT_CENA, READA[6]);
+  primitive = _buf bREADA7(NOT_CENA, READA[7]);
+  )
+   intern (x_detection_CENA) (primitive = _xor xx_detection_CENA(BMUX_CENA, BMUX_CENA, x_detection_CENA);)
+   intern (DFTRAMBYP) (primitive = _tie0 m0_dftrambyp(DFTRAMBYP);)
+   intern (SEA) (primitive = _tie0 m0_se0(SEA);)
+   intern (aSEA) (primitive = _and  a1SEA ( SEA, DFTRAMBYPinv, aSEA );)
+   intern (acendftA) (primitive = _and  a1cendft[A] (x_detection_CENA, DFTRAMBYPinv, acendftA );)
+   intern (XoutA) (primitive = _or  oXoutA ( aSEA, acendftA, XoutA );)
+  intern (READ_QA) (array = 7:0; 
+  primitive = _mux mREAD_QA0(QA[0],  INT_QA[0], READA[0], READ_QA[0]);
+  primitive = _mux mREAD_QA1(QA[1],  INT_QA[1], READA[1], READ_QA[1]);
+  primitive = _mux mREAD_QA2(QA[2],  INT_QA[2], READA[2], READ_QA[2]);
+  primitive = _mux mREAD_QA3(QA[3],  INT_QA[3], READA[3], READ_QA[3]);
+  primitive = _mux mREAD_QA4(QA[4],  INT_QA[4], READA[4], READ_QA[4]);
+  primitive = _mux mREAD_QA5(QA[5],  INT_QA[5], READA[5], READ_QA[5]);
+  primitive = _mux mREAD_QA6(QA[6],  INT_QA[6], READA[6], READ_QA[6]);
+  primitive = _mux mREAD_QA7(QA[7],  INT_QA[7], READA[7], READ_QA[7]);
+  )
+  intern (AAXOR) (array = 9 : 0;
+    primitive = _xor xAAXOR0(BMUX_AA[0], BMUX_AA[0], AAXOR[0]);
+    primitive = _xor xAAXOR1(BMUX_AA[1], BMUX_AA[1], AAXOR[1]);
+    primitive = _xor xAAXOR2(BMUX_AA[2], BMUX_AA[2], AAXOR[2]);
+    primitive = _xor xAAXOR3(BMUX_AA[3], BMUX_AA[3], AAXOR[3]);
+    primitive = _xor xAAXOR4(BMUX_AA[4], BMUX_AA[4], AAXOR[4]);
+    primitive = _xor xAAXOR5(BMUX_AA[5], BMUX_AA[5], AAXOR[5]);
+    primitive = _xor xAAXOR6(BMUX_AA[6], BMUX_AA[6], AAXOR[6]);
+    primitive = _xor xAAXOR7(BMUX_AA[7], BMUX_AA[7], AAXOR[7]);
+    primitive = _xor xAAXOR8(BMUX_AA[8], BMUX_AA[8], AAXOR[8]);
+    primitive = _xor xAAXOR9(BMUX_AA[9], BMUX_AA[9], AAXOR[9]);
+  )
+   intern (xA_addr_temp) (primitive = _or oxA_addr_temp( AAXOR[0], AAXOR[1], AAXOR[2], AAXOR[3], AAXOR[4], AAXOR[5], AAXOR[6], AAXOR[7], AAXOR[8], XoutAif,  AAXOR[9], xA_addr_temp);)
+   intern (xA_addr) (primitive = _and oxA_addr(NOT_CENA,xA_addr_temp,xA_addr);)
+   intern (READ_QAX) (array = 7 : 0;
+     primitive = _mux mREAD_QAX0 (READ_QA[0], tiex_readq, xA_addr, READ_QAX[0]);
+     primitive = _mux mREAD_QAX1 (READ_QA[1], tiex_readq, xA_addr, READ_QAX[1]);
+     primitive = _mux mREAD_QAX2 (READ_QA[2], tiex_readq, xA_addr, READ_QAX[2]);
+     primitive = _mux mREAD_QAX3 (READ_QA[3], tiex_readq, xA_addr, READ_QAX[3]);
+     primitive = _mux mREAD_QAX4 (READ_QA[4], tiex_readq, xA_addr, READ_QAX[4]);
+     primitive = _mux mREAD_QAX5 (READ_QA[5], tiex_readq, xA_addr, READ_QAX[5]);
+     primitive = _mux mREAD_QAX6 (READ_QA[6], tiex_readq, xA_addr, READ_QAX[6]);
+     primitive = _mux mREAD_QAX7 (READ_QA[7], tiex_readq, xA_addr, READ_QAX[7]);
+  )
+     intern (DA_scan) (array = 7 : 0;
+     primitive = _mux mDA_scan0(READ_QAX[0], QA[1], DFTRAMBYP, DA_scan[0]);
+     primitive = _mux mDA_scan1(READ_QAX[1], QA[2], DFTRAMBYP, DA_scan[1]);
+     primitive = _mux mDA_scan2(READ_QAX[2], QA[3], DFTRAMBYP, DA_scan[2]);
+     primitive = _mux mDA_scan3(READ_QAX[3], mtie_sel0, DFTRAMBYP, DA_scan[3]);
+     primitive = _mux mDA_scan4(READ_QAX[4], mtie_sel0, DFTRAMBYP, DA_scan[4]);
+     primitive = _mux mDA_scan5(READ_QAX[5], QA[4], DFTRAMBYP, DA_scan[5]);
+     primitive = _mux mDA_scan6(READ_QAX[6], QA[5], DFTRAMBYP, DA_scan[6]);
+     primitive = _mux mDA_scan7(READ_QAX[7], QA[6], DFTRAMBYP, DA_scan[7]);
+  )
+  output (QA) ( array = 7 : 0;
+     instance = rf_2p_hde_scanflop uDQA0 (.CLK(CLKA), .SE(SEA), .SI(QA[1]), .D(DA_scan[0]), .Q(QA[0]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA1 (.CLK(CLKA), .SE(SEA), .SI(QA[2]), .D(DA_scan[1]), .Q(QA[1]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA2 (.CLK(CLKA), .SE(SEA), .SI(QA[3]), .D(DA_scan[2]), .Q(QA[2]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA3 (.CLK(CLKA), .SE(SEA), .SI(BUS_SIA[0]), .D(DA_scan[3]), .Q(QA[3]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA4 (.CLK(CLKA), .SE(SEA), .SI(BUS_SIA[1]), .D(DA_scan[4]), .Q(QA[4]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA5 (.CLK(CLKA), .SE(SEA), .SI(QA[4]), .D(DA_scan[5]), .Q(QA[5]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA6 (.CLK(CLKA), .SE(SEA), .SI(QA[5]), .D(DA_scan[6]), .Q(QA[6]), .Xout(XoutA));
+     instance = rf_2p_hde_scanflop uDQA7 (.CLK(CLKA), .SE(SEA), .SI(QA[6]), .D(DA_scan[7]), .Q(QA[7]), .Xout(XoutA));
+ )
+   intern (BUS_AB) (array = 9 : 0; 
+      primitive = _buf  bBUS_AB0 ( AB[0], BUS_AB[0]);
+      primitive = _buf  bBUS_AB1 ( AB[1], BUS_AB[1]);
+      primitive = _buf  bBUS_AB2 ( AB[2], BUS_AB[2]);
+      primitive = _buf  bBUS_AB3 ( AB[3], BUS_AB[3]);
+      primitive = _buf  bBUS_AB4 ( AB[4], BUS_AB[4]);
+      primitive = _buf  bBUS_AB5 ( AB[5], BUS_AB[5]);
+      primitive = _buf  bBUS_AB6 ( AB[6], BUS_AB[6]);
+      primitive = _buf  bBUS_AB7 ( AB[7], BUS_AB[7]);
+      primitive = _buf  bBUS_AB8 ( AB[8], BUS_AB[8]);
+      primitive = _buf  bBUS_AB9 ( AB[9], BUS_AB[9]);
+   )
+   intern (BUS_DB) (array = 7 : 0; 
+      primitive = _buf  bBUS_DB0( DB[0], BUS_DB[0] );
+      primitive = _buf  bBUS_DB1( DB[1], BUS_DB[1] );
+      primitive = _buf  bBUS_DB2( DB[2], BUS_DB[2] );
+      primitive = _buf  bBUS_DB3( DB[3], BUS_DB[3] );
+      primitive = _buf  bBUS_DB4( DB[4], BUS_DB[4] );
+      primitive = _buf  bBUS_DB5( DB[5], BUS_DB[5] );
+      primitive = _buf  bBUS_DB6( DB[6], BUS_DB[6] );
+      primitive = _buf  bBUS_DB7( DB[7], BUS_DB[7] );
+   )
+  intern (BMUX_AB) (array = 9 : 0;
+    primitive = _buf bBMUX_AB0(BUS_AB[0], BMUX_AB[0]);
+    primitive = _buf bBMUX_AB1(BUS_AB[1], BMUX_AB[1]);
+    primitive = _buf bBMUX_AB2(BUS_AB[2], BMUX_AB[2]);
+    primitive = _buf bBMUX_AB3(BUS_AB[3], BMUX_AB[3]);
+    primitive = _buf bBMUX_AB4(BUS_AB[4], BMUX_AB[4]);
+    primitive = _buf bBMUX_AB5(BUS_AB[5], BMUX_AB[5]);
+    primitive = _buf bBMUX_AB6(BUS_AB[6], BMUX_AB[6]);
+    primitive = _buf bBMUX_AB7(BUS_AB[7], BMUX_AB[7]);
+    primitive = _buf bBMUX_AB8(BUS_AB[8], BMUX_AB[8]);
+    primitive = _buf bBMUX_AB9(BUS_AB[9], BMUX_AB[9]);
+  )
+  intern (BMUX_DB) (array = 7 : 0;
+  primitive = _buf bBMUX_DB0(BUS_DB[0], BMUX_DB[0]);
+  primitive = _buf bBMUX_DB1(BUS_DB[1], BMUX_DB[1]);
+  primitive = _buf bBMUX_DB2(BUS_DB[2], BMUX_DB[2]);
+  primitive = _buf bBMUX_DB3(BUS_DB[3], BMUX_DB[3]);
+  primitive = _buf bBMUX_DB4(BUS_DB[4], BMUX_DB[4]);
+  primitive = _buf bBMUX_DB5(BUS_DB[5], BMUX_DB[5]);
+  primitive = _buf bBMUX_DB6(BUS_DB[6], BMUX_DB[6]);
+  primitive = _buf bBMUX_DB7(BUS_DB[7], BMUX_DB[7]);
+  )
+  intern (BMUX_CENB) (primitive = _buf bBMUX_CENB(CENB, BMUX_CENB);)
+
+  intern (BMUX_AB_n) (array = 9 : 1; 
+  primitive = _inv nBMUX_AB_n1(BMUX_AB[1], BMUX_AB_n[1]);
+  primitive = _inv nBMUX_AB_n2(BMUX_AB[2], BMUX_AB_n[2]);
+  primitive = _inv nBMUX_AB_n3(BMUX_AB[3], BMUX_AB_n[3]);
+  primitive = _inv nBMUX_AB_n4(BMUX_AB[4], BMUX_AB_n[4]);
+  primitive = _inv nBMUX_AB_n5(BMUX_AB[5], BMUX_AB_n[5]);
+  primitive = _inv nBMUX_AB_n6(BMUX_AB[6], BMUX_AB_n[6]);
+  primitive = _inv nBMUX_AB_n7(BMUX_AB[7], BMUX_AB_n[7]);
+  primitive = _inv nBMUX_AB_n8(BMUX_AB[8], BMUX_AB_n[8]);
+  primitive = _inv nBMUX_AB_n9(BMUX_AB[9], BMUX_AB_n[9]);
+  )
+
+  intern (B_max) (array = 9 : 0; 
+    primitive = _tie1  bB_max0 ( B_max[0] );
+    primitive = _tie1  bB_max1 ( B_max[1] );
+    primitive = _tie1  bB_max2 ( B_max[2] );
+    primitive = _tie1  bB_max3 ( B_max[3] );
+    primitive = _tie1  bB_max4 ( B_max[4] );
+    primitive = _tie1  bB_max5 ( B_max[5] );
+    primitive = _tie1  bB_max6 ( B_max[6] );
+    primitive = _tie1  bB_max7 ( B_max[7] );
+    primitive = _tie1  bB_max8 ( B_max[8] );
+    primitive = _tie1  bB_max9 ( B_max[9] );
+  )
+
+  intern (B_max_n) (array = 9 : 0 ;
+  primitive = _inv bB_max_n0(B_max[0], B_max_n[0]);
+  primitive = _inv bB_max_n1(B_max[1], B_max_n[1]);
+  primitive = _inv bB_max_n2(B_max[2], B_max_n[2]);
+  primitive = _inv bB_max_n3(B_max[3], B_max_n[3]);
+  primitive = _inv bB_max_n4(B_max[4], B_max_n[4]);
+  primitive = _inv bB_max_n5(B_max[5], B_max_n[5]);
+  primitive = _inv bB_max_n6(B_max[6], B_max_n[6]);
+  primitive = _inv bB_max_n7(B_max[7], B_max_n[7]);
+  primitive = _inv bB_max_n8(B_max[8], B_max_n[8]);
+  primitive = _inv bB_max_n9(B_max[9], B_max_n[9]);
+  )
+
+  intern (AB_m) (array = 9 : 0 ;
+  primitive = _and aAB_m0(BMUX_AB[0], B_max_n[0], AB_m[0]);
+  primitive = _and aAB_m1(BMUX_AB[1], B_max_n[1], AB_m[1]);
+  primitive = _and aAB_m2(BMUX_AB[2], B_max_n[2], AB_m[2]);
+  primitive = _and aAB_m3(BMUX_AB[3], B_max_n[3], AB_m[3]);
+  primitive = _and aAB_m4(BMUX_AB[4], B_max_n[4], AB_m[4]);
+  primitive = _and aAB_m5(BMUX_AB[5], B_max_n[5], AB_m[5]);
+  primitive = _and aAB_m6(BMUX_AB[6], B_max_n[6], AB_m[6]);
+  primitive = _and aAB_m7(BMUX_AB[7], B_max_n[7], AB_m[7]);
+  primitive = _and aAB_m8(BMUX_AB[8], B_max_n[8], AB_m[8]);
+  primitive = _and aAB_m9(BMUX_AB[9], B_max_n[9], AB_m[9]);
+  )
+
+  intern (m_AB) (array = 9 : 1; 
+  primitive = _and am_AB1(BMUX_AB_n[1], B_max[1], m_AB[1]);
+  primitive = _and am_AB2(BMUX_AB_n[2], B_max[2], m_AB[2]);
+  primitive = _and am_AB3(BMUX_AB_n[3], B_max[3], m_AB[3]);
+  primitive = _and am_AB4(BMUX_AB_n[4], B_max[4], m_AB[4]);
+  primitive = _and am_AB5(BMUX_AB_n[5], B_max[5], m_AB[5]);
+  primitive = _and am_AB6(BMUX_AB_n[6], B_max[6], m_AB[6]);
+  primitive = _and am_AB7(BMUX_AB_n[7], B_max[7], m_AB[7]);
+  primitive = _and am_AB8(BMUX_AB_n[8], B_max[8], m_AB[8]);
+  primitive = _and am_AB9(BMUX_AB_n[9], B_max[9], m_AB[9]);
+  )
+
+  intern (EQ_B) (array = 9 : 1 ;
+    primitive = _nor nEQ_B1(m_AB[1], AB_m[1], EQ_B[1]);
+    primitive = _nor nEQ_B2(m_AB[2], AB_m[2], EQ_B[2]);
+    primitive = _nor nEQ_B3(m_AB[3], AB_m[3], EQ_B[3]);
+    primitive = _nor nEQ_B4(m_AB[4], AB_m[4], EQ_B[4]);
+    primitive = _nor nEQ_B5(m_AB[5], AB_m[5], EQ_B[5]);
+    primitive = _nor nEQ_B6(m_AB[6], AB_m[6], EQ_B[6]);
+    primitive = _nor nEQ_B7(m_AB[7], AB_m[7], EQ_B[7]);
+    primitive = _nor nEQ_B8(m_AB[8], AB_m[8], EQ_B[8]);
+    primitive = _nor nEQ_B9(m_AB[9], AB_m[9], EQ_B[9]);
+  )
+
+   intern (XoutBi) (array = 8 : 0;     primitive = _and aXoutBi0(AB_m[0], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3], EQ_B[2], EQ_B[1], XoutBi[0]);
+     primitive = _and aXoutBi1(AB_m[1], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3], EQ_B[2], XoutBi[1]);
+     primitive = _and aXoutBi2(AB_m[2], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3], XoutBi[2]);
+     primitive = _and aXoutBi3(AB_m[3], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], XoutBi[3]);
+     primitive = _and aXoutBi4(AB_m[4], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], XoutBi[4]);
+     primitive = _and aXoutBi5(AB_m[5], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], XoutBi[5]);
+     primitive = _and aXoutBi6(AB_m[6], EQ_B[9], EQ_B[8], EQ_B[7], XoutBi[6]);
+     primitive = _and aXoutBi7(AB_m[7], EQ_B[9], EQ_B[8], XoutBi[7]);
+     primitive = _and aXoutBi8(AB_m[8], EQ_B[9], XoutBi[8]);
+  )
+  intern (XoutBifTemp) (primitive = _or oXoutBifTemp (AB_m[9], XoutBi[0], XoutBi[1], XoutBi[2], XoutBi[3], XoutBi[4], XoutBi[5], XoutBi[6], XoutBi[7], XoutBi[8], XoutBifTemp);)
+  intern (XoutBif) (primitive = _and oXoutBif (XoutBifTemp, NOT_CENB, XoutBif);)
+
+  intern (NOT_CENB) (primitive = _inv iNOT_CENB(BMUX_CENB, NOT_CENB);)
+  intern (WRITEB) (array = 7 : 0;
+  primitive = _buf bWRITEB0(NOT_CENB, WRITEB[0]);
+  primitive = _buf bWRITEB1(NOT_CENB, WRITEB[1]);
+  primitive = _buf bWRITEB2(NOT_CENB, WRITEB[2]);
+  primitive = _buf bWRITEB3(NOT_CENB, WRITEB[3]);
+  primitive = _buf bWRITEB4(NOT_CENB, WRITEB[4]);
+  primitive = _buf bWRITEB5(NOT_CENB, WRITEB[5]);
+  primitive = _buf bWRITEB6(NOT_CENB, WRITEB[6]);
+  primitive = _buf bWRITEB7(NOT_CENB, WRITEB[7]);
+  )
+intern (INT_QA) (array = 7 : 0;
+   instance = rf_2p_hde_bitcell memB0 (.CLK(CLKB), .WRITE(WRITEB[0]), .READ(READA[0]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[0]), .Xout(XoutB), .Q(INT_QA[0]));
+   instance = rf_2p_hde_bitcell memB1 (.CLK(CLKB), .WRITE(WRITEB[1]), .READ(READA[1]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[1]), .Xout(XoutB), .Q(INT_QA[1]));
+   instance = rf_2p_hde_bitcell memB2 (.CLK(CLKB), .WRITE(WRITEB[2]), .READ(READA[2]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[2]), .Xout(XoutB), .Q(INT_QA[2]));
+   instance = rf_2p_hde_bitcell memB3 (.CLK(CLKB), .WRITE(WRITEB[3]), .READ(READA[3]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[3]), .Xout(XoutB), .Q(INT_QA[3]));
+   instance = rf_2p_hde_bitcell memB4 (.CLK(CLKB), .WRITE(WRITEB[4]), .READ(READA[4]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[4]), .Xout(XoutB), .Q(INT_QA[4]));
+   instance = rf_2p_hde_bitcell memB5 (.CLK(CLKB), .WRITE(WRITEB[5]), .READ(READA[5]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[5]), .Xout(XoutB), .Q(INT_QA[5]));
+   instance = rf_2p_hde_bitcell memB6 (.CLK(CLKB), .WRITE(WRITEB[6]), .READ(READA[6]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[6]), .Xout(XoutB), .Q(INT_QA[6]));
+   instance = rf_2p_hde_bitcell memB7 (.CLK(CLKB), .WRITE(WRITEB[7]), .READ(READA[7]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[7]), .Xout(XoutB), .Q(INT_QA[7]));
+  )
+   intern (x_detection_CENB) (primitive = _xor xx_detection_CENB(BMUX_CENB, BMUX_CENB, x_detection_CENB);)
+   intern (SEB) (primitive = _tie0 m0_se1(SEB);)
+   intern (aSEB) (primitive = _and  a1SEB ( SEB, DFTRAMBYPinv, aSEB );)
+   intern (acendftB) (primitive = _and  a1cendft[B] ( x_detection_CENB, DFTRAMBYPinv, acendftB );)
+   intern (XoutB) (primitive = _or  oXoutB ( aSEB,acendftB, XoutBif, XoutB );)
+   intern (DFTRAMBYPinv) (primitive = _inv  imDFTRAMBYP ( DFTRAMBYP,  DFTRAMBYPinv);)
+  )

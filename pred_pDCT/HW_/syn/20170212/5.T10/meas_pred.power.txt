@@ -1,0 +1,58 @@
+Loading db file '/eda/smic.40ll/arm/smic/logic0040ll/sc12mc_base_lvt_c40/r0p2/db/sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black box outputs. (PWR-428)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : meas_pred
+Version: I-2013.12-SP2
+Date   : Sun Feb 12 20:23:57 2017
+****************************************
+
+
+Library(s) Used:
+
+    sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c (File: /eda/smic.40ll/arm/smic/logic0040ll/sc12mc_base_lvt_c40/r0p2/db/sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c.db)
+
+
+Operating Conditions: ss_typical_max_0p99v_125c   Library: sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+meas_pred              Small             sc12mc_logic0040ll_base_lvt_c40_ss_typical_max_0p99v_125c
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1uW
+
+
+  Cell Internal Power  = 249.2732 uW   (60%)
+  Net Switching Power  = 166.9732 uW   (40%)
+                         ---------
+Total Dynamic Power    = 416.2465 uW  (100%)
+
+Cell Leakage Power     =  19.0187 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000        2.3224e-04            0.0000        2.3224e-04  (   0.05%)
+clock_network  3.7432e-04        2.4742e-04        7.5717e-02        6.9746e-04  (   0.16%)
+register       9.3315e-02        8.4697e-04            1.6217        9.5784e-02  (  22.01%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.1556            0.1656           17.3213            0.3386  (  77.78%)
+--------------------------------------------------------------------------------------------------
+Total              0.2493 mW         0.1670 mW        19.0187 uW         0.4353 mW
+1

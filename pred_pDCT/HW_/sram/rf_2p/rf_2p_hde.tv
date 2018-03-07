@@ -1,0 +1,394 @@
+/* tetramax_memcomp Version: 4.0.5-EAC4 */
+/* common_memcomp Version: 4.0.5-beta22 */
+/* lang compiler Version: 4.1.6-beta1 Jul 19 2012 13:55:19 */
+//
+//       CONFIDENTIAL AND PROPRIETARY SOFTWARE OF ARM PHYSICAL IP, INC.
+//      
+//       Copyright (c) 1993 - 2017 ARM Physical IP, Inc.  All Rights Reserved.
+//      
+//       Use of this Software is subject to the terms and conditions of the
+//       applicable license agreement with ARM Physical IP, Inc.
+//       In addition, this Software is protected by patents, copyright law 
+//       and international treaties.
+//      
+//       The copyright notice(s) in this Software does not indicate actual or
+//       intended publication of this Software.
+//
+//      Tetramax model for Synchronous Two-Port Register File
+//
+//       Instance Name:              rf_2p_hde
+//       Words:                      1024
+//       Bits:                       8
+//       Mux:                        4
+//       Drive:                      6
+//       Write Mask:                 Off
+//       Write Thru:                 Off
+//       Extra Margin Adjustment:    On
+//       Redundant Columns:          0
+//       Test Muxes                  Off
+//       Power Gating:               Off
+//       Retention:                  On
+//       Pipeline:                   Off
+//       Read Disturb Test:	        Off
+//       
+//       Creation Date:  Sun Oct 22 16:21:15 2017
+//       Version: 	r1p1
+//
+//      Verified
+//
+//      Modeling Assumptions:
+//      This model is for use by only TetraMax ATPG tool.
+//      It is not intended to be used by any Verilog Simulator.
+//
+//      Modeling Limitations: These models have limited functionality as
+//      defined by the TetraMax modelling guidelines. These models are
+//      developed on Verilog syntax but they don't fully represent the
+//      functionality of the memory model as they are restricted by
+//      the ATPG tool. We have used fast sequential ATPG engine for verification
+//      of all the memories on recommendation from Synopsys Tetramax expert. 
+//      The models have been tested by generating the ATPG vectors and simulating them
+//      as well as running functional vectors through tetramax logical simulation engine.
+//
+//      Known Bugs: None.
+//
+//      Known Work Arounds: N/A
+//
+
+
+`timescale 1ns/1ps
+`define read_write  readx
+`celldefine
+module rf_2p_hde_scanflop (Q, SI, D, SE, CLK, Xout);
+   output Q;
+   input SI, D, SE, CLK, Xout;
+   _MUX m1 (SE, D, SI, n1);
+   _MUX m2 (Xout, n1, 1'bX, n2);
+   _DFF r1 (1'b0, 1'b0, CLK, n2, Q);
+endmodule
+`endcelldefine
+`celldefine
+module rf_2p_hde_bitcell (CLK, WRITE, READ, WA, RA, D, Xout, Q);
+   input CLK, WRITE, READ, D, Xout;
+   input [9:0] WA, RA;
+   output Q;
+ 
+   reg Q;
+   reg mem [1023:0];
+   wire WRITE_ram, D_ram;
+   wire [9:0] WA_ram;
+ 
+   _MUX WRITE_MUX (Xout, WRITE, 1'bX, WRITE_ram);
+   _MUX D_mux (Xout, D, 1'bX, D_ram);
+   _MUX A0_mux (Xout, WA[0], 1'bX, WA_ram[0]);
+   _MUX A1_mux (Xout, WA[1], 1'bX, WA_ram[1]);
+   _MUX A2_mux (Xout, WA[2], 1'bX, WA_ram[2]);
+   _MUX A3_mux (Xout, WA[3], 1'bX, WA_ram[3]);
+   _MUX A4_mux (Xout, WA[4], 1'bX, WA_ram[4]);
+   _MUX A5_mux (Xout, WA[5], 1'bX, WA_ram[5]);
+   _MUX A6_mux (Xout, WA[6], 1'bX, WA_ram[6]);
+   _MUX A7_mux (Xout, WA[7], 1'bX, WA_ram[7]);
+   _MUX A8_mux (Xout, WA[8], 1'bX, WA_ram[8]);
+   _MUX A9_mux (Xout, WA[9], 1'bX, WA_ram[9]);
+ 
+   event WRITE_OP;
+   always @ (posedge CLK) if(WRITE_ram) begin
+      mem[WA_ram]=D_ram;
+      #0; -> WRITE_OP;
+   end
+ 
+   always @ (READ or RA or WRITE_OP) if(READ) Q=mem[RA];
+endmodule
+`endcelldefine
+`suppress_faults
+`enable_portfaults
+`ifdef POWER_PINS
+module rf_2p_hde (VDDCE, VDDPE, VSSE, QA, CLKA, CENA, AA, CLKB, CENB, AB, DB, EMAA,
+    EMAB, RET1N, COLLDISN);
+`else
+module rf_2p_hde (QA, CLKA, CENA, AA, CLKB, CENB, AB, DB, EMAA, EMAB, RET1N, COLLDISN);
+`endif
+
+  output [7:0] QA;
+  input  CLKA;
+  input  CENA;
+  input [9:0] AA;
+  input  CLKB;
+  input  CENB;
+  input [9:0] AB;
+  input [7:0] DB;
+  input [2:0] EMAA;
+  input [2:0] EMAB;
+  input  RET1N;
+  input  COLLDISN;
+`ifdef POWER_PINS
+  inout VDDCE;
+  inout VDDPE;
+  inout VSSE;
+`endif
+   wire [1:0] BUS_SIA;
+   assign SIA[0] = 1'b0;
+   assign SIA[1] = 1'b0;
+   assign BUS_SIA[0] = SIA[0];
+   assign BUS_SIA[1] = SIA[1];
+   wire [9:0] BUS_AA;
+   assign BUS_AA = AA;
+   wire [7:0] INT_QA;
+   wire [7:0] READ_QA;
+  wire [9:0] BMUX_AA;
+  assign BMUX_AA=BUS_AA;
+  assign BMUX_CENA=CENA;
+
+   wire [9:0] A_max, A_max_n, AA_m;
+   wire [8:0] XoutAi;
+   wire [9:1] EQ_A, m_AA, BMUX_AA_n;
+   wire XoutAif;
+  not BMUX_AA1_n (BMUX_AA_n[1], BMUX_AA[1]);
+  not BMUX_AA2_n (BMUX_AA_n[2], BMUX_AA[2]);
+  not BMUX_AA3_n (BMUX_AA_n[3], BMUX_AA[3]);
+  not BMUX_AA4_n (BMUX_AA_n[4], BMUX_AA[4]);
+  not BMUX_AA5_n (BMUX_AA_n[5], BMUX_AA[5]);
+  not BMUX_AA6_n (BMUX_AA_n[6], BMUX_AA[6]);
+  not BMUX_AA7_n (BMUX_AA_n[7], BMUX_AA[7]);
+  not BMUX_AA8_n (BMUX_AA_n[8], BMUX_AA[8]);
+  not BMUX_AA9_n (BMUX_AA_n[9], BMUX_AA[9]);
+
+  assign A_max[0] = 1;
+  assign A_max[1] = 1;
+  assign A_max[2] = 1;
+  assign A_max[3] = 1;
+  assign A_max[4] = 1;
+  assign A_max[5] = 1;
+  assign A_max[6] = 1;
+  assign A_max[7] = 1;
+  assign A_max[8] = 1;
+  assign A_max[9] = 1;
+
+  not Amax0_n (A_max_n[0], A_max[0]);
+  not Amax1_n (A_max_n[1], A_max[1]);
+  not Amax2_n (A_max_n[2], A_max[2]);
+  not Amax3_n (A_max_n[3], A_max[3]);
+  not Amax4_n (A_max_n[4], A_max[4]);
+  not Amax5_n (A_max_n[5], A_max[5]);
+  not Amax6_n (A_max_n[6], A_max[6]);
+  not Amax7_n (A_max_n[7], A_max[7]);
+  not Amax8_n (A_max_n[8], A_max[8]);
+  not Amax9_n (A_max_n[9], A_max[9]);
+
+  and andBMUXAAAmax0 (AA_m[0], BMUX_AA[0], A_max_n[0]);
+  and andBMUXAAAmax1 (AA_m[1], BMUX_AA[1], A_max_n[1]);
+  and andBMUXAAAmax2 (AA_m[2], BMUX_AA[2], A_max_n[2]);
+  and andBMUXAAAmax3 (AA_m[3], BMUX_AA[3], A_max_n[3]);
+  and andBMUXAAAmax4 (AA_m[4], BMUX_AA[4], A_max_n[4]);
+  and andBMUXAAAmax5 (AA_m[5], BMUX_AA[5], A_max_n[5]);
+  and andBMUXAAAmax6 (AA_m[6], BMUX_AA[6], A_max_n[6]);
+  and andBMUXAAAmax7 (AA_m[7], BMUX_AA[7], A_max_n[7]);
+  and andBMUXAAAmax8 (AA_m[8], BMUX_AA[8], A_max_n[8]);
+  and andBMUXAAAmax9 (AA_m[9], BMUX_AA[9], A_max_n[9]);
+
+  and andBMUXAAAmax1_n (m_AA[1], BMUX_AA_n[1], A_max[1]);
+  and andBMUXAAAmax2_n (m_AA[2], BMUX_AA_n[2], A_max[2]);
+  and andBMUXAAAmax3_n (m_AA[3], BMUX_AA_n[3], A_max[3]);
+  and andBMUXAAAmax4_n (m_AA[4], BMUX_AA_n[4], A_max[4]);
+  and andBMUXAAAmax5_n (m_AA[5], BMUX_AA_n[5], A_max[5]);
+  and andBMUXAAAmax6_n (m_AA[6], BMUX_AA_n[6], A_max[6]);
+  and andBMUXAAAmax7_n (m_AA[7], BMUX_AA_n[7], A_max[7]);
+  and andBMUXAAAmax8_n (m_AA[8], BMUX_AA_n[8], A_max[8]);
+  and andBMUXAAAmax9_n (m_AA[9], BMUX_AA_n[9], A_max[9]);
+
+  nor norAAAmax1 (EQ_A[1], m_AA[1], AA_m[1]);
+  nor norAAAmax2 (EQ_A[2], m_AA[2], AA_m[2]);
+  nor norAAAmax3 (EQ_A[3], m_AA[3], AA_m[3]);
+  nor norAAAmax4 (EQ_A[4], m_AA[4], AA_m[4]);
+  nor norAAAmax5 (EQ_A[5], m_AA[5], AA_m[5]);
+  nor norAAAmax6 (EQ_A[6], m_AA[6], AA_m[6]);
+  nor norAAAmax7 (EQ_A[7], m_AA[7], AA_m[7]);
+  nor norAAAmax8 (EQ_A[8], m_AA[8], AA_m[8]);
+  nor norAAAmax9 (EQ_A[9], m_AA[9], AA_m[9]);
+
+  and XfAAAmax0 (XoutAi[0], AA_m[0], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3], EQ_A[2], EQ_A[1]);
+  and XfAAAmax1 (XoutAi[1], AA_m[1], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3], EQ_A[2]);
+  and XfAAAmax2 (XoutAi[2], AA_m[2], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4], EQ_A[3]);
+  and XfAAAmax3 (XoutAi[3], AA_m[3], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5], EQ_A[4]);
+  and XfAAAmax4 (XoutAi[4], AA_m[4], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6], EQ_A[5]);
+  and XfAAAmax5 (XoutAi[5], AA_m[5], EQ_A[9], EQ_A[8], EQ_A[7], EQ_A[6]);
+  and XfAAAmax6 (XoutAi[6], AA_m[6], EQ_A[9], EQ_A[8], EQ_A[7]);
+  and XfAAAmax7 (XoutAi[7], AA_m[7], EQ_A[9], EQ_A[8]);
+  and XfAAAmax8 (XoutAi[8], AA_m[8], EQ_A[9]);
+  or orXfAAAmax9 (XoutAif, AA_m[9], XoutAi[0], XoutAi[1], XoutAi[2], XoutAi[3], XoutAi[4], XoutAi[5], XoutAi[6], XoutAi[7], XoutAi[8]);
+
+   wire NOT_CENA;
+   not (NOT_CENA, BMUX_CENA);
+   wire [7:0] READA;
+   buf (READA[0], NOT_CENA);
+   buf (READA[1], NOT_CENA);
+   buf (READA[2], NOT_CENA);
+   buf (READA[3], NOT_CENA);
+   buf (READA[4], NOT_CENA);
+   buf (READA[5], NOT_CENA);
+   buf (READA[6], NOT_CENA);
+   buf (READA[7], NOT_CENA);
+   xor (x_detection_CENA, BMUX_CENA, BMUX_CENA);
+   assign DFTRAMBYP = 1'b0;
+   assign SEA = 1'b0;
+   and (acendftA, x_detection_CENA, ~DFTRAMBYP);
+   assign XoutA = (SEA & ~DFTRAMBYP) | acendftA;
+   _MUX reA0 (READA[0], QA[0], INT_QA[0], READ_QA[0]);
+   _MUX reA1 (READA[1], QA[1], INT_QA[1], READ_QA[1]);
+   _MUX reA2 (READA[2], QA[2], INT_QA[2], READ_QA[2]);
+   _MUX reA3 (READA[3], QA[3], INT_QA[3], READ_QA[3]);
+   _MUX reA4 (READA[4], QA[4], INT_QA[4], READ_QA[4]);
+   _MUX reA5 (READA[5], QA[5], INT_QA[5], READ_QA[5]);
+   _MUX reA6 (READA[6], QA[6], INT_QA[6], READ_QA[6]);
+   _MUX reA7 (READA[7], QA[7], INT_QA[7], READ_QA[7]);
+   wire [9:0] AAXOR;
+   xor (AAXOR[0], BMUX_AA[0], BMUX_AA[0]);
+   xor (AAXOR[1], BMUX_AA[1], BMUX_AA[1]);
+   xor (AAXOR[2], BMUX_AA[2], BMUX_AA[2]);
+   xor (AAXOR[3], BMUX_AA[3], BMUX_AA[3]);
+   xor (AAXOR[4], BMUX_AA[4], BMUX_AA[4]);
+   xor (AAXOR[5], BMUX_AA[5], BMUX_AA[5]);
+   xor (AAXOR[6], BMUX_AA[6], BMUX_AA[6]);
+   xor (AAXOR[7], BMUX_AA[7], BMUX_AA[7]);
+   xor (AAXOR[8], BMUX_AA[8], BMUX_AA[8]);
+   xor (AAXOR[9], BMUX_AA[9], BMUX_AA[9]);
+   wire xA_addr;
+   or (xA_addr, AAXOR[0], AAXOR[1], AAXOR[2], AAXOR[3], AAXOR[4], AAXOR[5], AAXOR[6], AAXOR[7], AAXOR[8], XoutAif,  AAXOR[9]);
+   _MUX rxA0 (xA_addr, READ_QA[0], 1'bX, READ_QAX[0]);
+   _MUX rxA1 (xA_addr, READ_QA[1], 1'bX, READ_QAX[1]);
+   _MUX rxA2 (xA_addr, READ_QA[2], 1'bX, READ_QAX[2]);
+   _MUX rxA3 (xA_addr, READ_QA[3], 1'bX, READ_QAX[3]);
+   _MUX rxA4 (xA_addr, READ_QA[4], 1'bX, READ_QAX[4]);
+   _MUX rxA5 (xA_addr, READ_QA[5], 1'bX, READ_QAX[5]);
+   _MUX rxA6 (xA_addr, READ_QA[6], 1'bX, READ_QAX[6]);
+   _MUX rxA7 (xA_addr, READ_QA[7], 1'bX, READ_QAX[7]);
+   _MUX mqA0 (DFTRAMBYP, READ_QAX[0], QA[1], DA_scan[0]);
+   _MUX mqA1 (DFTRAMBYP, READ_QAX[1], QA[2], DA_scan[1]);
+   _MUX mqA2 (DFTRAMBYP, READ_QAX[2], QA[3], DA_scan[2]);
+   _MUX mqA3 (DFTRAMBYP, READ_QAX[3], 1'b0, DA_scan[3]);
+   _MUX mqA4 (DFTRAMBYP, READ_QAX[4], 1'b0, DA_scan[4]);
+   _MUX mqA5 (DFTRAMBYP, READ_QAX[5], QA[4], DA_scan[5]);
+   _MUX mqA6 (DFTRAMBYP, READ_QAX[6], QA[5], DA_scan[6]);
+   _MUX mqA7 (DFTRAMBYP, READ_QAX[7], QA[6], DA_scan[7]);
+   rf_2p_hde_scanflop uDQA0 (.CLK(CLKA), .SE(SEA), .SI(QA[1]), .D(DA_scan[0]), .Q(QA[0]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA1 (.CLK(CLKA), .SE(SEA), .SI(QA[2]), .D(DA_scan[1]), .Q(QA[1]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA2 (.CLK(CLKA), .SE(SEA), .SI(QA[3]), .D(DA_scan[2]), .Q(QA[2]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA3 (.CLK(CLKA), .SE(SEA), .SI(BUS_SIA[0]), .D(DA_scan[3]), .Q(QA[3]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA4 (.CLK(CLKA), .SE(SEA), .SI(BUS_SIA[1]), .D(DA_scan[4]), .Q(QA[4]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA5 (.CLK(CLKA), .SE(SEA), .SI(QA[4]), .D(DA_scan[5]), .Q(QA[5]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA6 (.CLK(CLKA), .SE(SEA), .SI(QA[5]), .D(DA_scan[6]), .Q(QA[6]), .Xout(XoutA));
+   rf_2p_hde_scanflop uDQA7 (.CLK(CLKA), .SE(SEA), .SI(QA[6]), .D(DA_scan[7]), .Q(QA[7]), .Xout(XoutA));
+   wire [9:0] BUS_AB;
+   assign BUS_AB = AB;
+   wire [7:0] BUS_DB;
+  assign BUS_DB = DB;
+  wire [9:0] BMUX_AB;
+  assign BMUX_AB=BUS_AB;
+  wire [7:0] BMUX_DB;
+  assign BMUX_DB=BUS_DB;
+  assign BMUX_CENB=CENB;
+
+   wire [9:0] B_max, B_max_n, AB_m;
+   wire [8:0] XoutBi;
+   wire [9:1] EQ_B, m_AB, BMUX_AB_n;
+   wire XoutBif;
+  not BMUX_AB1_n (BMUX_AB_n[1], BMUX_AB[1]);
+  not BMUX_AB2_n (BMUX_AB_n[2], BMUX_AB[2]);
+  not BMUX_AB3_n (BMUX_AB_n[3], BMUX_AB[3]);
+  not BMUX_AB4_n (BMUX_AB_n[4], BMUX_AB[4]);
+  not BMUX_AB5_n (BMUX_AB_n[5], BMUX_AB[5]);
+  not BMUX_AB6_n (BMUX_AB_n[6], BMUX_AB[6]);
+  not BMUX_AB7_n (BMUX_AB_n[7], BMUX_AB[7]);
+  not BMUX_AB8_n (BMUX_AB_n[8], BMUX_AB[8]);
+  not BMUX_AB9_n (BMUX_AB_n[9], BMUX_AB[9]);
+
+  assign B_max[0] = 1;
+  assign B_max[1] = 1;
+  assign B_max[2] = 1;
+  assign B_max[3] = 1;
+  assign B_max[4] = 1;
+  assign B_max[5] = 1;
+  assign B_max[6] = 1;
+  assign B_max[7] = 1;
+  assign B_max[8] = 1;
+  assign B_max[9] = 1;
+
+  not Bmax0_n (B_max_n[0], B_max[0]);
+  not Bmax1_n (B_max_n[1], B_max[1]);
+  not Bmax2_n (B_max_n[2], B_max[2]);
+  not Bmax3_n (B_max_n[3], B_max[3]);
+  not Bmax4_n (B_max_n[4], B_max[4]);
+  not Bmax5_n (B_max_n[5], B_max[5]);
+  not Bmax6_n (B_max_n[6], B_max[6]);
+  not Bmax7_n (B_max_n[7], B_max[7]);
+  not Bmax8_n (B_max_n[8], B_max[8]);
+  not Bmax9_n (B_max_n[9], B_max[9]);
+
+  and andBMUXABAmax0 (AB_m[0], BMUX_AB[0], B_max_n[0]);
+  and andBMUXABAmax1 (AB_m[1], BMUX_AB[1], B_max_n[1]);
+  and andBMUXABAmax2 (AB_m[2], BMUX_AB[2], B_max_n[2]);
+  and andBMUXABAmax3 (AB_m[3], BMUX_AB[3], B_max_n[3]);
+  and andBMUXABAmax4 (AB_m[4], BMUX_AB[4], B_max_n[4]);
+  and andBMUXABAmax5 (AB_m[5], BMUX_AB[5], B_max_n[5]);
+  and andBMUXABAmax6 (AB_m[6], BMUX_AB[6], B_max_n[6]);
+  and andBMUXABAmax7 (AB_m[7], BMUX_AB[7], B_max_n[7]);
+  and andBMUXABAmax8 (AB_m[8], BMUX_AB[8], B_max_n[8]);
+  and andBMUXABAmax9 (AB_m[9], BMUX_AB[9], B_max_n[9]);
+
+  and andBMUXABAmax1_n (m_AB[1], BMUX_AB_n[1], B_max[1]);
+  and andBMUXABAmax2_n (m_AB[2], BMUX_AB_n[2], B_max[2]);
+  and andBMUXABAmax3_n (m_AB[3], BMUX_AB_n[3], B_max[3]);
+  and andBMUXABAmax4_n (m_AB[4], BMUX_AB_n[4], B_max[4]);
+  and andBMUXABAmax5_n (m_AB[5], BMUX_AB_n[5], B_max[5]);
+  and andBMUXABAmax6_n (m_AB[6], BMUX_AB_n[6], B_max[6]);
+  and andBMUXABAmax7_n (m_AB[7], BMUX_AB_n[7], B_max[7]);
+  and andBMUXABAmax8_n (m_AB[8], BMUX_AB_n[8], B_max[8]);
+  and andBMUXABAmax9_n (m_AB[9], BMUX_AB_n[9], B_max[9]);
+
+  nor norABAmax1 (EQ_B[1], m_AB[1], AB_m[1]);
+  nor norABAmax2 (EQ_B[2], m_AB[2], AB_m[2]);
+  nor norABAmax3 (EQ_B[3], m_AB[3], AB_m[3]);
+  nor norABAmax4 (EQ_B[4], m_AB[4], AB_m[4]);
+  nor norABAmax5 (EQ_B[5], m_AB[5], AB_m[5]);
+  nor norABAmax6 (EQ_B[6], m_AB[6], AB_m[6]);
+  nor norABAmax7 (EQ_B[7], m_AB[7], AB_m[7]);
+  nor norABAmax8 (EQ_B[8], m_AB[8], AB_m[8]);
+  nor norABAmax9 (EQ_B[9], m_AB[9], AB_m[9]);
+
+  and XfABAmax0 (XoutBi[0], AB_m[0], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3], EQ_B[2], EQ_B[1]);
+  and XfABAmax1 (XoutBi[1], AB_m[1], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3], EQ_B[2]);
+  and XfABAmax2 (XoutBi[2], AB_m[2], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4], EQ_B[3]);
+  and XfABAmax3 (XoutBi[3], AB_m[3], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5], EQ_B[4]);
+  and XfABAmax4 (XoutBi[4], AB_m[4], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6], EQ_B[5]);
+  and XfABAmax5 (XoutBi[5], AB_m[5], EQ_B[9], EQ_B[8], EQ_B[7], EQ_B[6]);
+  and XfABAmax6 (XoutBi[6], AB_m[6], EQ_B[9], EQ_B[8], EQ_B[7]);
+  and XfABAmax7 (XoutBi[7], AB_m[7], EQ_B[9], EQ_B[8]);
+  and XfABAmax8 (XoutBi[8], AB_m[8], EQ_B[9]);
+  or orXfABAmax9 (XoutBif, AB_m[9], XoutBi[0], XoutBi[1], XoutBi[2], XoutBi[3], XoutBi[4], XoutBi[5], XoutBi[6], XoutBi[7], XoutBi[8]);
+
+   wire NOT_CENB;
+   not (NOT_CENB, BMUX_CENB);
+   wire [7:0] WRITEB;
+   buf (WRITEB[0], NOT_CENB);
+   buf (WRITEB[1], NOT_CENB);
+   buf (WRITEB[2], NOT_CENB);
+   buf (WRITEB[3], NOT_CENB);
+   buf (WRITEB[4], NOT_CENB);
+   buf (WRITEB[5], NOT_CENB);
+   buf (WRITEB[6], NOT_CENB);
+   buf (WRITEB[7], NOT_CENB);
+   rf_2p_hde_bitcell memB0 (.CLK(CLKB), .WRITE(WRITEB[0]), .READ(READA[0]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[0]), .Xout(XoutB), .Q(INT_QA[0]));
+   rf_2p_hde_bitcell memB1 (.CLK(CLKB), .WRITE(WRITEB[1]), .READ(READA[1]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[1]), .Xout(XoutB), .Q(INT_QA[1]));
+   rf_2p_hde_bitcell memB2 (.CLK(CLKB), .WRITE(WRITEB[2]), .READ(READA[2]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[2]), .Xout(XoutB), .Q(INT_QA[2]));
+   rf_2p_hde_bitcell memB3 (.CLK(CLKB), .WRITE(WRITEB[3]), .READ(READA[3]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[3]), .Xout(XoutB), .Q(INT_QA[3]));
+   rf_2p_hde_bitcell memB4 (.CLK(CLKB), .WRITE(WRITEB[4]), .READ(READA[4]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[4]), .Xout(XoutB), .Q(INT_QA[4]));
+   rf_2p_hde_bitcell memB5 (.CLK(CLKB), .WRITE(WRITEB[5]), .READ(READA[5]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[5]), .Xout(XoutB), .Q(INT_QA[5]));
+   rf_2p_hde_bitcell memB6 (.CLK(CLKB), .WRITE(WRITEB[6]), .READ(READA[6]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[6]), .Xout(XoutB), .Q(INT_QA[6]));
+   rf_2p_hde_bitcell memB7 (.CLK(CLKB), .WRITE(WRITEB[7]), .READ(READA[7]), .WA(BMUX_AB), .RA(BMUX_AA), .D(BMUX_DB[7]), .Xout(XoutB), .Q(INT_QA[7]));
+   xor (x_detection_CENB, BMUX_CENB, BMUX_CENB);
+   assign SEB = 1'b0;
+   and (acendftB, x_detection_CENB, ~DFTRAMBYP);
+   assign XoutB = (SEB & ~DFTRAMBYP) | acendftB | XoutBif;
+endmodule
+`undef read_write
+`disable_portfaults
+`nosuppress_faults

@@ -1,0 +1,67 @@
+Spreadsheet updated
+ARM Physical IP, Inc.
+CentOS release 6.9 (Final)
+Linux ipsrc105 2.6.32-696.6.3.el6.x86_64 #1 SMP Wed Jul 12 14:17:22 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+Compiler version r1p1
+GUI version 8.2.6
+
+
+CONFIDENTIAL AND PROPRIETARY SOFTWARE OF ARM PHYSICAL IP, INC.
+
+Copyright (c) 1993 - 2017 ARM Physical IP, Inc.  All Rights Reserved.
+
+Use of this Software is subject to the terms and conditions of the
+applicable license agreement with ARM Physical IP, Inc. 
+In addition, this Software is protected by patents, copyright law 
+and international treaties.
+
+The copyright notice(s) in this Software does not indicate actual or
+intended publication of this Software.
+
+
+High Density Two Port Register File RVT RVT Compiler, LOGIC0040LL 40nm Process 0.589um^2 Bit Cell
+Log file is ACI.log
+
+Spreadsheet updated
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt ascii -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+ascii generator succeeded, created:
+   rf_2p_hde_ff_1p21v_1p21v_125c.dat
+   rf_2p_hde_ff_1p21v_1p21v_m40c.dat
+   rf_2p_hde_ss_0p99v_0p99v_125c.dat
+   rf_2p_hde_ss_0p99v_0p99v_m40c.dat
+   rf_2p_hde_tt_1p10v_1p10v_25c.dat
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt bitmap -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+bitmap generator succeeded, created: rf_2p_hde.bitmap
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt bitmap -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+bitmap generator succeeded, created: rf_2p_hde.bitmap
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt ctl -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+ctl generator succeeded, created: rf_2p_hde.ctl
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt fastscan -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+fastscan generator succeeded, created: rf_2p_hde.mdt
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt gds2 -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+ARM PIPD physical GDS tool, version 2.4.1
+gds2 generator succeeded, created: rf_2p_hde.gds2
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt lef-fp -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+lef-fp generator succeeded, created: rf_2p_hde.lef
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt lvs -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+lvs generator succeeded, created: rf_2p_hde.cdl
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt postscript -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+postscript generator succeeded, created:
+   rf_2p_hde_ff_1p21v_1p21v_125c.ps
+   rf_2p_hde_ff_1p21v_1p21v_m40c.ps
+   rf_2p_hde_ss_0p99v_0p99v_125c.ps
+   rf_2p_hde_ss_0p99v_0p99v_m40c.ps
+   rf_2p_hde_tt_1p10v_1p10v_25c.ps
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt tmax -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+tmax generator succeeded, created: rf_2p_hde.tv
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt verilog -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+verilog generator succeeded, created: rf_2p_hde.v
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt verilog_rtl -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+verilog_rtl generator succeeded, created: rf_2p_hde_rtl.v
+cmd: /eda/smic.40ll/arm/smic/logic0040ll/rf_2p_hde_rvt_rvt/r1p1/bin/rf_2p_hde_rvt_rvt liberty -name_case upper -mvt "" -ser none -bus_notation on -site_def off -check_instname on -frequency 1.0 -bmux off -diodes on -activity_factor 50 -words 1024 -drive 6 -power_type otc -bits 8 -instname rf_2p_hde -retention on -libertyviewstyle nldm -write_mask off -left_bus_delim "[" -right_bus_delim "]" -pwr_gnd_rename vddpe:VDDPE,vddce:VDDCE,vsse:VSSE -wp_size 1 -libname USERLIB -cust_comment "This is a memory instance" -prefix "" -mux 4 -top_layer m5-m10 -back_biasing off -ema on -corners ff_1p21v_1p21v_125c,ff_1p21v_1p21v_m40c,ss_0p99v_0p99v_125c,ss_0p99v_0p99v_m40c,tt_1p10v_1p10v_25c
+liberty generator succeeded, created:
+   rf_2p_hde_ff_1p21v_1p21v_125c.lib
+   rf_2p_hde_ff_1p21v_1p21v_m40c.lib
+   rf_2p_hde_ss_0p99v_0p99v_125c.lib
+   rf_2p_hde_ss_0p99v_0p99v_m40c.lib
+   rf_2p_hde_tt_1p10v_1p10v_25c.lib
